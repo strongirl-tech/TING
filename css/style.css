@@ -451,6 +451,27 @@ img {
   color: var(--color-accent);
 }
 
+/* ===== Growth Page Images ===== */
+.growth-image {
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.growth-image img {
+  max-width: 100%;
+  max-height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+.growth-image figcaption {
+  margin-top: var(--spacing-sm);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
   .nav-links {
