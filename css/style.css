@@ -451,6 +451,62 @@ img {
   color: var(--color-accent);
 }
 
+/* ===== Growth Page ===== */
+.growth-opening {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-bottom: 2rem;
+  line-height: 2;
+}
+
+.growth-closing {
+  text-align: center;
+  color: var(--color-text-light);
+  font-style: italic;
+  line-height: 2.2;
+  margin-top: var(--spacing-lg);
+}
+
+.growth-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-md) 0;
+}
+
+.growth-item {
+  padding: var(--spacing-md);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+  border-radius: 0 8px 8px 0;
+}
+
+.growth-phase {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.growth-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
+}
+
+.growth-item p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.9;
+}
+
 /* ===== Growth Page Images ===== */
 .growth-image {
   margin: var(--spacing-lg) 0;
