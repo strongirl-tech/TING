@@ -22,7 +22,110 @@
   <meta name="twitter:title" content="从Burnout到韧性：海外华人女性的集体疗愈之路 - TING">
   <meta name="twitter:description" content="探索 · 记录 · 思考">
   <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
-</head>
+
+<style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 22px;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 32px 24px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+      max-width: 380px;
+      width: 90vw;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    .qr-tabs {
+      display: flex;
+      border-bottom: 2px solid #e8e8e8;
+      margin-bottom: 20px;
+      gap: 0;
+    }
+    .qr-tab-btn {
+      flex: 1;
+      padding: 10px 0 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      color: #999;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .qr-tab-btn.active { color: #2E4A35; }
+    .qr-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: #3A6B47;
+      border-radius: 2px;
+    }
+    .qr-tab-content { display: none; }
+    .qr-tab-content.active { display: block; }
+    .qr-tab-content img.qr-static-img {
+      width: 220px; height: 220px;
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .qr-tab-content p { margin: 0 0 12px; color: #666; font-size: 13px; }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #3A6B47, #5A8C6A);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .share-btn:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(58,107,71,0.3); }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 28px 16px 16px; }
+      .qr-tab-content img.qr-static-img { width: 180px !important; height: 180px !important; }
+    }
+</style></head>
 
 <body>
 
@@ -520,5 +623,144 @@
     function downloadShareCard(){if(!scg)generateShareCard();setTimeout(function(){var c=document.getElementById('shareCardCanvas'),a=document.createElement('a');a.download='TING-share-card.png';a.href=c.toDataURL('image/png');a.click();},300);}
   </script>
 
-</body>
+
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <div class="qr-tabs">
+        <button class="qr-tab-btn active" onclick="switchTab('scan')">扫码访问</button>
+        <button class="qr-tab-btn" onclick="switchTab('share')">分享卡片</button>
+      </div>
+      <div class="qr-tab-content active" id="qrScanTab">
+        <img src="../assets/site-qrcode.png" alt="扫码访问 TING" class="qr-static-img">
+        <p>扫描二维码访问本站</p>
+      </div>
+      <div class="qr-tab-content" id="qrShareTab">
+        <img src="../assets/site-qrcode.png" alt="二维码" class="qr-static-img" style="width:140px;height:140px;">
+        <canvas id="shareCardCanvas" width="680" height="960" style="display:none;"></canvas>
+        <p>生成精美分享卡片，保存图片后发朋友圈</p>
+        <button class="share-btn" onclick="generateAndSave()">保存分享卡片</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleQR() {
+      document.getElementById('qrOverlay').classList.add('active');
+    }
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+    function switchTab(tab) {
+      var btns = document.querySelectorAll('.qr-tab-btn');
+      var tabs = document.querySelectorAll('.qr-tab-content');
+      btns.forEach(function(b, i) {
+        b.classList.toggle('active', i === (tab === 'scan' ? 0 : 1));
+      });
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      document.getElementById(tab === 'scan' ? 'qrScanTab' : 'qrShareTab').classList.add('active');
+    }
+    function generateAndSave() {
+      var canvas = document.getElementById('shareCardCanvas');
+      var ctx = canvas.getContext('2d');
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      var pageTitle = ogTitle ? ogTitle.getAttribute('content') : document.title;
+      var pageDesc = ogDesc ? ogDesc.getAttribute('content') : '探索 · 记录 · 思考';
+      var grad = ctx.createLinearGradient(0, 0, 0, 960);
+      grad.addColorStop(0, '#2A5239');
+      grad.addColorStop(1, '#4A7C5A');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 680, 960);
+      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = 2;
+      for (var i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.arc(340, 480, 120 + i * 40, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 64px Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('TING', 340, 120);
+      ctx.fillStyle = '#ffffff';
+      roundRect(ctx, 40, 160, 600, 680, 16);
+      ctx.fill();
+      ctx.fillStyle = '#2E4A35';
+      ctx.font = 'bold 26px "Noto Serif SC", Georgia, serif';
+      ctx.textAlign = 'center';
+      wrapText(ctx, pageTitle, 340, 210, 520, 32);
+      ctx.fillStyle = '#666666';
+      ctx.font = '16px "Noto Sans SC", Arial, sans-serif';
+      wrapText(ctx, pageDesc, 340, 300, 520, 22);
+      var qrImg = new Image();
+      qrImg.crossOrigin = 'anonymous';
+      var qrSrc = document.querySelector('.qr-static-img').src;
+      qrImg.onload = function() {
+        ctx.drawImage(qrImg, 240, 520, 200, 200);
+        ctx.fillStyle = '#999999';
+        ctx.font = '14px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('扫码阅读全文', 340, 740);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.onerror = function() {
+        ctx.fillStyle = '#2E4A35';
+        ctx.font = '16px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(window.location.href, 340, 600);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.src = qrSrc;
+    }
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      var chars = text.split('');
+      var line = '';
+      var lines = [];
+      for (var i = 0; i < chars.length; i++) {
+        var testLine = line + chars[i];
+        var metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && line.length > 0) {
+          lines.push(line);
+          line = chars[i];
+        } else {
+          line = testLine;
+        }
+      }
+      lines.push(line);
+      for (var j = 0; j < lines.length; j++) {
+        ctx.fillText(lines[j], x, y + j * lineHeight);
+      }
+      return lines.length;
+    }
+  </script></body>
 </html>
