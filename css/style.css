@@ -1871,3 +1871,250 @@ img {
     padding: 1.3rem 1.3rem 1rem;
   }
 }
+
+/* ===== Reading Notes (读书批注本) Layout — bell-hooks-reading.html ===== */
+
+/* ── Book Info Card ── */
+.book-info-card {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto 2.8rem;
+  background: linear-gradient(135deg, rgba(74, 124, 90, 0.06) 0%, rgba(199, 164, 179, 0.05) 100%);
+  border: 1px solid rgba(74, 124, 90, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(74, 124, 90, 0.06);
+}
+
+.book-spine {
+  width: 7px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #2A5239 0%, #4A7C5A 45%, #9B5E6A 100%);
+}
+
+.book-info-body {
+  padding: 1.4rem 1.8rem;
+  flex: 1;
+}
+
+.book-info-row {
+  margin-bottom: 1rem;
+}
+
+.book-info-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c1a1a;
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+.book-info-en {
+  font-size: 0.82rem;
+  color: #a89a94;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.book-info-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.2rem;
+}
+
+.book-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.book-info-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #b8a8a2;
+  font-weight: 600;
+}
+
+.book-info-value {
+  font-size: 0.92rem;
+  color: #4A7C5A;
+  font-weight: 500;
+}
+
+/* ── Text Highlight (荧光笔效果) ── */
+.text-highlight {
+  background: linear-gradient(180deg, transparent 58%, rgba(74, 124, 90, 0.16) 58%, rgba(74, 124, 90, 0.16) 95%, transparent 95%);
+  padding: 0 2px;
+  font-weight: 500;
+}
+
+/* ── Reading Annotation (批注卡片) ── */
+.reading-annotation {
+  max-width: 580px;
+  margin: 2.2rem auto;
+  padding: 1.3rem 1.5rem 1.1rem 1.8rem;
+  background: linear-gradient(135deg, rgba(199, 164, 179, 0.08) 0%, rgba(155, 94, 106, 0.05) 100%);
+  border-left: 3px solid #9B5E6A;
+  border-radius: 0 10px 10px 0;
+  position: relative;
+}
+
+.annotation-marker {
+  position: absolute;
+  top: -11px;
+  left: 14px;
+  background: #9B5E6A;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 11px;
+  border-radius: 10px;
+  letter-spacing: 0.14em;
+  font-family: var(--font-sans);
+}
+
+.reading-annotation p {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.78;
+  color: #4a3a3a;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.annotation-source {
+  font-size: 0.8rem;
+  color: #b8a0a4;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+/* ── Concept Comparison Panel ── */
+.concept-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.concept-col {
+  padding: 1.3rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.25s var(--ease-silk), box-shadow 0.25s var(--ease-silk);
+}
+
+.concept-col:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.concept-uplift {
+  background: rgba(74, 124, 90, 0.07);
+  border: 1px solid rgba(74, 124, 90, 0.18);
+}
+
+.concept-transform {
+  background: rgba(155, 94, 106, 0.06);
+  border: 1px solid rgba(155, 94, 106, 0.18);
+}
+
+.concept-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+
+.concept-label {
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-sans);
+}
+
+.concept-uplift .concept-label {
+  color: #4A7C5A;
+}
+
+.concept-transform .concept-label {
+  color: #9B5E6A;
+}
+
+.concept-col p {
+  font-size: 0.88rem;
+  color: #6a5a55;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Reader's Reflection Section ── */
+.reader-reflection {
+  background: linear-gradient(180deg, rgba(74, 124, 90, 0.035) 0%, transparent 100%);
+  border-radius: 14px;
+  padding: 0.5rem 1.5rem 1.5rem !important;
+}
+
+/* ── Bookmark Quote ── */
+.bookmark-quote {
+  max-width: 580px;
+  margin: 2.5rem auto 1rem;
+  padding: 1.5rem 1.5rem 1.4rem 2rem;
+  background: linear-gradient(135deg, #4A7C5A 0%, #2A5239 100%);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bookmark-quote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #9B5E6A;
+}
+
+.bookmark-tag {
+  position: absolute;
+  top: -1px;
+  right: 18px;
+  background: #9B5E6A;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 12px;
+  border-radius: 0 0 8px 8px;
+  letter-spacing: 0.14em;
+  font-family: var(--font-sans);
+}
+
+.bookmark-quote p {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .concept-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .book-info-meta {
+    gap: 1rem 1.5rem;
+  }
+
+  .book-info-card {
+    max-width: 100%;
+  }
+
+  .reading-annotation,
+  .bookmark-quote {
+    max-width: 100%;
+  }
+}
