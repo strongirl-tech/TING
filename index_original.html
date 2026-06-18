@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TING — 探索 · 记录 · 思考</title>
+  <meta name="description" content="一个关于研究、旅行与成长的思考空间。记录海外华人女性的身份协商、自我重构与跨国探索。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">TING</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">首页</a>
+        <a href="blog.html">博客</a>
+        <a href="growth.html">成长记录</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <canvas id="leaf-canvas" aria-hidden="true"></canvas>
+
+    <!-- Botanical corner: top-left -->
+    <svg class="hero-botanical hero-botanical--tl" viewBox="0 0 140 140" fill="none" aria-hidden="true">
+      <path d="M8 132 C8 88 30 58 68 18" stroke="#3A6B47" stroke-width="1.2" fill="none" opacity="0.4"/>
+      <path d="M8 110 C22 96 42 94 56 78" stroke="#5A8C6A" stroke-width="0.8" fill="none" opacity="0.3"/>
+      <ellipse cx="42" cy="58" rx="14" ry="8" fill="#4A7C5A" opacity="0.28" transform="rotate(-35 42 58)"/>
+      <ellipse cx="28" cy="82" rx="11" ry="6.5" fill="#2A5239" opacity="0.22" transform="rotate(10 28 82)"/>
+      <ellipse cx="60" cy="36" rx="12" ry="7" fill="#6B9E7A" opacity="0.32" transform="rotate(-55 60 36)"/>
+      <ellipse cx="14" cy="100" rx="9" ry="5.5" fill="#4A7C5A" opacity="0.2" transform="rotate(5 14 100)"/>
+      <ellipse cx="50" cy="72" rx="10" ry="6" fill="#3D7A52" opacity="0.25" transform="rotate(-20 50 72)"/>
+      <ellipse cx="30" cy="50" rx="8" ry="5" fill="#5A8C6A" opacity="0.2" transform="rotate(-45 30 50)"/>
+      <!-- small accent leaves -->
+      <ellipse cx="70" cy="22" rx="7" ry="4" fill="#7BAE8A" opacity="0.3" transform="rotate(-60 70 22)"/>
+      <ellipse cx="18" cy="68" rx="6" ry="3.5" fill="#4A7C5A" opacity="0.18" transform="rotate(20 18 68)"/>
+    </svg>
+
+    <!-- Botanical corner: bottom-right -->
+    <svg class="hero-botanical hero-botanical--br" viewBox="0 0 140 140" fill="none" aria-hidden="true">
+      <path d="M132 8 C132 52 110 82 72 122" stroke="#3A6B47" stroke-width="1.2" fill="none" opacity="0.4"/>
+      <path d="M132 30 C118 44 98 46 84 62" stroke="#5A8C6A" stroke-width="0.8" fill="none" opacity="0.3"/>
+      <ellipse cx="98" cy="82" rx="14" ry="8" fill="#4A7C5A" opacity="0.28" transform="rotate(145 98 82)"/>
+      <ellipse cx="112" cy="58" rx="11" ry="6.5" fill="#2A5239" opacity="0.22" transform="rotate(-170 112 58)"/>
+      <ellipse cx="80" cy="104" rx="12" ry="7" fill="#6B9E7A" opacity="0.32" transform="rotate(125 80 104)"/>
+      <ellipse cx="126" cy="40" rx="9" ry="5.5" fill="#4A7C5A" opacity="0.2" transform="rotate(-175 126 40)"/>
+      <ellipse cx="90" cy="68" rx="10" ry="6" fill="#3D7A52" opacity="0.25" transform="rotate(160 90 68)"/>
+      <ellipse cx="110" cy="90" rx="8" ry="5" fill="#5A8C6A" opacity="0.2" transform="rotate(135 110 90)"/>
+      <ellipse cx="70" cy="118" rx="7" ry="4" fill="#7BAE8A" opacity="0.3" transform="rotate(120 70 118)"/>
+      <ellipse cx="122" cy="72" rx="6" ry="3.5" fill="#4A7C5A" opacity="0.18" transform="rotate(-160 122 72)"/>
+    </svg>
+
+    <!-- Botanical corner: top-right (smaller) -->
+    <svg class="hero-botanical hero-botanical--tr" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+      <path d="M72 8 C60 30 45 40 20 68" stroke="#4A7C5A" stroke-width="1" fill="none" opacity="0.25"/>
+      <ellipse cx="55" cy="25" rx="10" ry="6" fill="#4A7C5A" opacity="0.2" transform="rotate(30 55 25)"/>
+      <ellipse cx="38" cy="45" rx="8" ry="5" fill="#6B9E7A" opacity="0.22" transform="rotate(15 38 45)"/>
+      <ellipse cx="65" cy="12" rx="6" ry="3.5" fill="#3D7A52" opacity="0.18" transform="rotate(45 65 12)"/>
+    </svg>
+
+    <!-- Botanical corner: bottom-left (smaller) -->
+    <svg class="hero-botanical hero-botanical--bl" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+      <path d="M8 72 C20 50 35 40 60 12" stroke="#4A7C5A" stroke-width="1" fill="none" opacity="0.25"/>
+      <ellipse cx="25" cy="55" rx="10" ry="6" fill="#4A7C5A" opacity="0.2" transform="rotate(-150 25 55)"/>
+      <ellipse cx="42" cy="35" rx="8" ry="5" fill="#6B9E7A" opacity="0.22" transform="rotate(-165 42 35)"/>
+      <ellipse cx="15" cy="68" rx="6" ry="3.5" fill="#3D7A52" opacity="0.18" transform="rotate(-135 15 68)"/>
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-subtitle">探索 &nbsp;·&nbsp; 记录 &nbsp;·&nbsp; 思考</p>
+      <h1 class="hero-title">
+        在缝隙中生长<br>向更远的地方<span>伸展</span>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        记录关于身份、研究与生活的碎片。<br>
+        关于一棵树如何长成自己的样子。
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Latest Posts -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <svg class="section-leaf-deco" viewBox="0 0 16 22" fill="none" aria-hidden="true">
+            <path d="M8 1.5 C11.5 5.5 13 11 8 20.5 C3 11 4.5 5.5 8 1.5Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="8" y1="1.5" x2="8" y2="20.5" stroke="rgba(255,255,255,0.4)" stroke-width="0.7"/>
+            <path d="M8 8 C10 9.5 11 11 10 13" stroke="rgba(255,255,255,0.25)" stroke-width="0.5" fill="none"/>
+          </svg>
+          <h2 class="section-title">最新文章</h2>
+        </div>
+        <div class="posts-grid">
+
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="2026-06-17">2026.06.17</time>
+              <span class="post-tag">研究笔记</span>
+            </div>
+            <h3 class="post-card-title">
+              <a href="posts/identity-in-between.html">在缝隙中安放自己：海外华人女性的身份协商与自我重构</a>
+            </h3>
+            <p class="post-card-excerpt">当母语成为情感的锚点，而外语化作理性的工具，身份认同便不再是一个固定的答案，而是一场持续的协商。在她乡论坛的观察中，我看见无数女性在文化的夹缝中寻找属于自己的坐标。</p>
+            <a href="posts/identity-in-between.html" class="read-more">阅读全文 →</a>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="2026-06-16">2026.06.16</time>
+              <span class="post-tag">研究笔记</span>
+            </div>
+            <h3 class="post-card-title">
+              <a href="posts/burnout-and-recovery.html">从 Burnout 到韧性：海外华人女性的集体疗愈之路</a>
+            </h3>
+            <p class="post-card-excerpt">当"她乡"论坛中有人分享 burnout 经历和面对挫折的困惑，评论区被温暖回应填满。海外华人女性如何在数字社区中建构关系性韧性？</p>
+            <a href="posts/burnout-and-recovery.html" class="read-more">阅读全文 →</a>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="2026-06-01">2026.06.01</time>
+              <span class="post-tag">研究笔记</span>
+            </div>
+            <h3 class="post-card-title">
+              <a href="posts/vibe-coding-and-identity.html">Vibe Coding 与海外华人女性的数字身份重构</a>
+            </h3>
+            <p class="post-card-excerpt">当"说人话就能写代码"成为现实，技术赋权如何改变海外华人女性的自我认知与职业身份？</p>
+            <a href="posts/vibe-coding-and-identity.html" class="read-more">阅读全文 →</a>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="2026-04-12">2026.04.12</time>
+              <span class="post-tag">田野笔记</span>
+            </div>
+            <h3 class="post-card-title">
+              <a href="posts/digital-ethnography.html">数字民族志：在"她乡"论坛中观察身份协商</a>
+            </h3>
+            <p class="post-card-excerpt">一个海外华人女性论坛如何成为身份认同的实验场？从帖子内容到社区互动，记录田野观察的第一手笔记。</p>
+            <a href="posts/digital-ethnography.html" class="read-more">阅读全文 →</a>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="2026-02-18">2026.02.18</time>
+              <span class="post-tag">读书笔记</span>
+            </div>
+            <h3 class="post-card-title">
+              <a href="posts/bell-hooks-reading.html">重读 bell hooks：从边缘到中心的女性主义思考</a>
+            </h3>
+            <p class="post-card-excerpt">在跨国语境下重新阅读《女权主义理论：从边缘到中心》，那些关于种族、阶级与性别的论述有了新的回响。</p>
+            <a href="posts/bell-hooks-reading.html" class="read-more">阅读全文 →</a>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-meta">
+              <time datetime="2026-01-10">2026.01.10</time>
+              <span class="post-tag post-tag--alt">个人故事</span>
+            </div>
+            <h3 class="post-card-title">
+              <a href="growth.html">成长记录：读研三年，认知的重塑</a>
+            </h3>
+            <p class="post-card-excerpt">说真的，读研可以改变命运。从生不如死的日子到一个人看极光，这不是一个逆袭故事，这是一个找到自己的故事。</p>
+            <a href="growth.html" class="read-more">阅读全文 →</a>
+          </article>
+
+        </div>
+
+        <div class="section-footer">
+          <a href="blog.html" class="btn-outline">查看所有文章</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section--about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <svg class="section-leaf-deco" viewBox="0 0 16 22" fill="none" aria-hidden="true">
+            <path d="M8 1.5 C11.5 5.5 13 11 8 20.5 C3 11 4.5 5.5 8 1.5Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="8" y1="1.5" x2="8" y2="20.5" stroke="rgba(255,255,255,0.4)" stroke-width="0.7"/>
+            <path d="M8 8 C10 9.5 11 11 10 13" stroke="rgba(255,255,255,0.25)" stroke-width="0.5" fill="none"/>
+          </svg>
+          <h2 class="section-title">关于我</h2>
+        </div>
+        <div class="about-section">
+          <div class="about-text">
+            <p>我是一个即将毕业的研究生。读研的这段经历教会我最重要的东西是<strong>韧性</strong>——不是坚硬地对抗，而是柔软地承受，然后继续生长。</p>
+            <p>我的灵魂是一棵大树，根系扎在泥土里，枝叶向上生长，不断伸展。这个博客是我的思考记录和分享空间——关于研究、关于旅行、关于成长，关于一棵树如何长成自己的样子。</p>
+            <a href="about.html" class="btn-outline btn-green">了解更多</a>
+          </div>
+          <div class="about-visual">
+            <!-- Botanical Tree SVG illustration -->
+            <svg class="about-tree-svg" viewBox="0 0 200 230" fill="none" aria-label="生长之树">
+              <!-- Ground -->
+              <ellipse cx="100" cy="218" rx="38" ry="5" fill="#D4E6DA" opacity="0.5"/>
+              <!-- Roots -->
+              <path d="M100 212 C88 208 72 212 60 218" stroke="#4A7C5A" stroke-width="1.8" stroke-linecap="round" opacity="0.45"/>
+              <path d="M100 212 C112 208 128 212 140 218" stroke="#4A7C5A" stroke-width="1.8" stroke-linecap="round" opacity="0.45"/>
+              <path d="M94 214 C84 206 72 204 62 208" stroke="#2A5239" stroke-width="1.1" stroke-linecap="round" opacity="0.35"/>
+              <path d="M106 214 C116 206 128 204 138 208" stroke="#2A5239" stroke-width="1.1" stroke-linecap="round" opacity="0.35"/>
+              <path d="M100 214 C96 208 92 210 86 216" stroke="#3A6B47" stroke-width="0.9" stroke-linecap="round" opacity="0.3"/>
+              <path d="M100 214 C104 208 108 210 114 216" stroke="#3A6B47" stroke-width="0.9" stroke-linecap="round" opacity="0.3"/>
+              <!-- Main trunk -->
+              <path d="M100 212 C97 192 96 172 98 152 C100 132 99 112 100 92" stroke="#3A6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <path d="M100 212 C103 192 104 172 102 152 C100 132 101 112 100 92" stroke="#4A8C5A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+              <!-- Left main branch -->
+              <path d="M99 128 C84 118 68 112 52 102" stroke="#3A6B47" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              <path d="M52 102 C41 95 33 86 28 76" stroke="#4A7C5A" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <path d="M52 102 C48 94 47 84 50 75" stroke="#4A7C5A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+              <!-- Right main branch -->
+              <path d="M101 117 C117 105 135 100 152 94" stroke="#3A6B47" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+              <path d="M152 94 C163 87 171 79 175 68" stroke="#4A7C5A" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <path d="M152 94 C156 86 155 75 150 67" stroke="#4A7C5A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+              <!-- Top branches -->
+              <path d="M100 92 C91 79 80 70 67 59" stroke="#4A7C5A" stroke-width="1.9" stroke-linecap="round" fill="none"/>
+              <path d="M100 92 C109 79 120 70 133 59" stroke="#4A7C5A" stroke-width="1.9" stroke-linecap="round" fill="none"/>
+              <path d="M100 92 C100 79 100 65 100 50" stroke="#4A7C5A" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <!-- Sub-branches left -->
+              <path d="M67 59 C58 52 50 45 43 38" stroke="#5A8C6A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+              <path d="M67 59 C63 51 62 42 65 34" stroke="#5A8C6A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+              <!-- Sub-branches right -->
+              <path d="M133 59 C142 52 150 45 157 38" stroke="#5A8C6A" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+              <path d="M133 59 C137 51 138 42 135 34" stroke="#5A8C6A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+              <!-- Top branch splits -->
+              <path d="M100 50 C93 42 86 35 79 26" stroke="#6B9E7A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+              <path d="M100 50 C107 42 114 35 121 26" stroke="#6B9E7A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+              <path d="M100 50 C100 42 100 34 100 24" stroke="#6B9E7A" stroke-width="1" stroke-linecap="round" fill="none"/>
+
+              <!-- ===== LEAVES ===== -->
+              <!-- Upper crown center -->
+              <ellipse cx="100" cy="18" rx="9" ry="5.5" fill="#2D6B3F" opacity="0.92" transform="rotate(0 100 18)"/>
+              <ellipse cx="89" cy="22" rx="8.5" ry="5" fill="#3D7A52" opacity="0.88" transform="rotate(-18 89 22)"/>
+              <ellipse cx="111" cy="22" rx="8.5" ry="5" fill="#4A8C60" opacity="0.85" transform="rotate(18 111 22)"/>
+              <ellipse cx="80" cy="28" rx="9" ry="5.5" fill="#3A7A4A" opacity="0.8" transform="rotate(-30 80 28)"/>
+              <ellipse cx="120" cy="28" rx="9" ry="5.5" fill="#4A7C5A" opacity="0.8" transform="rotate(30 120 28)"/>
+              <ellipse cx="100" cy="30" rx="8" ry="4.5" fill="#56986A" opacity="0.72" transform="rotate(5 100 30)"/>
+              <!-- Top left sub-branch leaves -->
+              <ellipse cx="42" cy="34" rx="8.5" ry="5" fill="#4A7C5A" opacity="0.78" transform="rotate(-44 42 34)"/>
+              <ellipse cx="52" cy="28" rx="8" ry="4.8" fill="#3D7A52" opacity="0.82" transform="rotate(-25 52 28)"/>
+              <ellipse cx="63" cy="26" rx="9" ry="5.2" fill="#56986A" opacity="0.72" transform="rotate(-15 63 26)"/>
+              <ellipse cx="36" cy="43" rx="7" ry="4" fill="#2D6B3F" opacity="0.65" transform="rotate(-55 36 43)"/>
+              <ellipse cx="70" cy="32" rx="7" ry="4" fill="#7BAE8A" opacity="0.6" transform="rotate(-8 70 32)"/>
+              <!-- Top right sub-branch leaves -->
+              <ellipse cx="158" cy="34" rx="8.5" ry="5" fill="#4A7C5A" opacity="0.78" transform="rotate(44 158 34)"/>
+              <ellipse cx="148" cy="28" rx="8" ry="4.8" fill="#3D7A52" opacity="0.82" transform="rotate(25 148 28)"/>
+              <ellipse cx="137" cy="26" rx="9" ry="5.2" fill="#56986A" opacity="0.72" transform="rotate(15 137 26)"/>
+              <ellipse cx="164" cy="43" rx="7" ry="4" fill="#2D6B3F" opacity="0.65" transform="rotate(55 164 43)"/>
+              <ellipse cx="130" cy="32" rx="7" ry="4" fill="#7BAE8A" opacity="0.6" transform="rotate(8 130 32)"/>
+              <!-- Left upper branch leaves -->
+              <ellipse cx="28" cy="73" rx="9.5" ry="5.5" fill="#4A7C5A" opacity="0.72" transform="rotate(-58 28 73)"/>
+              <ellipse cx="40" cy="67" rx="8.5" ry="5" fill="#3D7A52" opacity="0.78" transform="rotate(-38 40 67)"/>
+              <ellipse cx="52" cy="72" rx="8" ry="4.8" fill="#56986A" opacity="0.68" transform="rotate(-22 52 72)"/>
+              <ellipse cx="22" cy="83" rx="7.5" ry="4.5" fill="#2A5239" opacity="0.6" transform="rotate(-70 22 83)"/>
+              <!-- Right upper branch leaves -->
+              <ellipse cx="172" cy="66" rx="9.5" ry="5.5" fill="#4A7C5A" opacity="0.72" transform="rotate(58 172 66)"/>
+              <ellipse cx="160" cy="60" rx="8.5" ry="5" fill="#3D7A52" opacity="0.78" transform="rotate(38 160 60)"/>
+              <ellipse cx="148" cy="65" rx="8" ry="4.8" fill="#56986A" opacity="0.68" transform="rotate(22 148 65)"/>
+              <ellipse cx="178" cy="76" rx="7.5" ry="4.5" fill="#2A5239" opacity="0.6" transform="rotate(70 178 76)"/>
+              <!-- Left lower branch leaves -->
+              <ellipse cx="53" cy="98" rx="10" ry="5.8" fill="#4A7C5A" opacity="0.62" transform="rotate(-22 53 98)"/>
+              <ellipse cx="40" cy="94" rx="8" ry="4.5" fill="#3D7A52" opacity="0.58" transform="rotate(-42 40 94)"/>
+              <!-- Right lower branch leaves -->
+              <ellipse cx="150" cy="90" rx="10" ry="5.8" fill="#4A7C5A" opacity="0.62" transform="rotate(22 150 90)"/>
+              <ellipse cx="163" cy="86" rx="8" ry="4.5" fill="#3D7A52" opacity="0.58" transform="rotate(42 163 86)"/>
+              <!-- Scattered depth leaves -->
+              <ellipse cx="76" cy="48" rx="6.5" ry="3.8" fill="#7BAE8A" opacity="0.5" transform="rotate(-28 76 48)"/>
+              <ellipse cx="124" cy="46" rx="6.5" ry="3.8" fill="#7BAE8A" opacity="0.5" transform="rotate(28 124 46)"/>
+              <ellipse cx="95" cy="42" rx="5.5" ry="3" fill="#A8C5B0" opacity="0.42" transform="rotate(-10 95 42)"/>
+              <ellipse cx="105" cy="40" rx="5" ry="3" fill="#A8C5B0" opacity="0.38" transform="rotate(10 105 40)"/>
+              <!-- A few "light" leaves at outer edges -->
+              <ellipse cx="22" cy="62" rx="6" ry="3.5" fill="#A8C5B0" opacity="0.35" transform="rotate(-65 22 62)"/>
+              <ellipse cx="178" cy="55" rx="6" ry="3.5" fill="#A8C5B0" opacity="0.35" transform="rotate(65 178 55)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <span class="footer-brand">TING</span>
+      <p>© 2025–2026 &nbsp;·&nbsp; All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/strongirl-tech/TING" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
