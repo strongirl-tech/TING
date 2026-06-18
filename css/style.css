@@ -2118,3 +2118,495 @@ img {
     max-width: 100%;
   }
 }
+/* ============================================================
+   JOURNEY LOG LAYOUT — growth.html
+   Unique layout: vertical timeline, milestone cards,
+   travel footprint tags, growth stats panel, closing poem card.
+   Shares the same botanical palette and typography.
+   ============================================================ */
+
+/* ── Journey layout container ── */
+.journey-layout {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+/* ── Opening statement card ── */
+.journey-opening {
+  position: relative;
+  text-align: center;
+  padding: 2.2rem 2rem 1.8rem;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(160deg,
+    rgba(238, 245, 239, 0.5) 0%,
+    rgba(247, 243, 240, 0.3) 100%);
+  border: 1px solid rgba(74, 124, 90, 0.12);
+  border-radius: 14px;
+}
+.journey-opening-mark {
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #4A7C5A;
+  opacity: 0.18;
+  margin-bottom: -0.5rem;
+}
+.journey-opening p {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: #2c1a1a;
+  font-style: italic;
+  margin: 0 0 0.3rem;
+  font-weight: 400;
+}
+.journey-opening p:nth-child(3) {
+  font-weight: 600;
+  color: #2A5239;
+}
+.journey-opening-line {
+  width: 36px;
+  height: 1.5px;
+  background: linear-gradient(to right, var(--color-accent), var(--color-leaf));
+  margin: 1rem auto 0.8rem;
+  border-radius: 1px;
+}
+.journey-opening-note {
+  font-family: var(--font-sans) !important;
+  font-size: 0.88rem !important;
+  color: #9a8a85 !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  line-height: 1.7 !important;
+  max-width: 440px;
+  margin: 0 auto !important;
+}
+
+/* ── Growth stats panel ── */
+.growth-stats-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.3rem 1.5rem;
+  margin-bottom: 3rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(74, 124, 90, 0.14);
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(42, 82, 57, 0.04);
+}
+.growth-stat-item {
+  flex: 1;
+  text-align: center;
+}
+.growth-stat-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #2A5239;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.growth-stat-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #9a8a85;
+  letter-spacing: 0.04em;
+}
+.growth-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(74, 124, 90, 0.15);
+  flex-shrink: 0;
+}
+
+/* ── Vertical timeline ── */
+.journey-timeline {
+  position: relative;
+  padding-left: 0;
+}
+
+/* ── Milestone ── */
+.milestone {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.milestone:last-child {
+  padding-bottom: 0;
+}
+
+/* Marker column */
+.milestone-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.milestone-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 2px rgba(74, 124, 90, 0.15);
+  flex-shrink: 0;
+  margin-top: 6px;
+  position: relative;
+  z-index: 1;
+}
+.milestone-dot--rose {
+  background: #c7a4b3;
+  box-shadow: 0 0 0 2px rgba(199, 164, 179, 0.2);
+}
+.milestone-dot--green {
+  background: #4A7C5A;
+  box-shadow: 0 0 0 2px rgba(74, 124, 90, 0.2);
+}
+.milestone-dot--amber {
+  background: #d4a653;
+  box-shadow: 0 0 0 2px rgba(212, 166, 83, 0.2);
+}
+/* Connecting line */
+.milestone-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom,
+    rgba(74, 124, 90, 0.2),
+    rgba(74, 124, 90, 0.08));
+  margin-top: 4px;
+  min-height: 40px;
+}
+
+/* Content column */
+.milestone-content {
+  padding-bottom: 2.2rem;
+}
+.milestone:last-child .milestone-content {
+  padding-bottom: 0;
+}
+
+/* Header */
+.milestone-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.milestone-phase {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #c7a4b3;
+  background: rgba(199, 164, 179, 0.1);
+  border: 1px solid rgba(199, 164, 179, 0.25);
+  padding: 0.22em 0.8em;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.milestone-phase--green {
+  color: #4A7C5A;
+  background: rgba(74, 124, 90, 0.09);
+  border-color: rgba(74, 124, 90, 0.22);
+}
+.milestone-phase--amber {
+  color: #b8862e;
+  background: rgba(212, 166, 83, 0.1);
+  border-color: rgba(212, 166, 83, 0.25);
+}
+.milestone-year {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #b0a098;
+  letter-spacing: 0.03em;
+}
+
+/* Title */
+.milestone-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #2c1a1a;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+}
+
+/* Body */
+.milestone-body {
+  margin-bottom: 1rem;
+}
+.milestone-body:last-child {
+  margin-bottom: 0;
+}
+.milestone-body p {
+  font-family: var(--font-serif);
+  font-size: 1.025rem;
+  line-height: 1.98;
+  color: #3a2a2a;
+  margin: 0 0 1.1rem;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+.milestone-body p:last-child {
+  margin-bottom: 0;
+}
+.milestone-body p strong {
+  color: #2c1a1a;
+  font-weight: 600;
+}
+
+/* ── Milestone insight box ── */
+.milestone-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 1.2rem 0 1.4rem;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.78;
+  font-style: italic;
+}
+.milestone-insight p {
+  margin: 0;
+}
+.milestone-insight strong {
+  font-style: normal;
+  font-weight: 700;
+}
+.milestone-insight--rose {
+  background: rgba(199, 164, 179, 0.07);
+  border-left: 3px solid #c7a4b3;
+  color: #4a2a38;
+}
+.milestone-insight--rose .milestone-insight-icon {
+  color: #c7a4b3;
+}
+.milestone-insight--green {
+  background: rgba(74, 124, 90, 0.07);
+  border-left: 3px solid #4A7C5A;
+  color: #2A5239;
+}
+.milestone-insight--green .milestone-insight-icon {
+  color: #4A7C5A;
+}
+.milestone-insight-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Travel footprint ── */
+.travel-footprint {
+  margin: 1.5rem 0 1.2rem;
+  padding: 1.2rem 1.3rem;
+  background: linear-gradient(135deg,
+    rgba(238, 245, 239, 0.6) 0%,
+    rgba(247, 243, 240, 0.3) 100%);
+  border: 1px solid rgba(74, 124, 90, 0.12);
+  border-radius: 12px;
+}
+.travel-footprint-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #4A7C5A;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.travel-footprint-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.travel-footprint-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.travel-tag {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  padding: 0.25rem 0.7rem;
+  background: rgba(74, 124, 90, 0.06);
+  color: #3a5a44;
+  border: 1px solid rgba(74, 124, 90, 0.15);
+  border-radius: 8px;
+  font-weight: 400;
+  transition: background 0.2s, transform 0.2s;
+}
+.travel-tag:hover {
+  background: rgba(74, 124, 90, 0.12);
+  transform: translateY(-1px);
+}
+.travel-tag--fav {
+  background: rgba(199, 164, 179, 0.08);
+  color: #9B5E6A;
+  border-color: rgba(199, 164, 179, 0.25);
+  font-weight: 500;
+}
+
+/* ── Closing poem card ── */
+.closing-poem {
+  position: relative;
+  margin-top: 3rem;
+  padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+  background: linear-gradient(150deg,
+    #2A5239 0%,
+    #3D7A52 50%,
+    #4A7C5A 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(42, 82, 57, 0.2);
+}
+.closing-poem::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    rgba(199, 164, 179, 0.6),
+    rgba(255, 255, 255, 0.3),
+    rgba(199, 164, 179, 0.6));
+}
+.closing-poem::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(199, 164, 179, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+/* Bookmark */
+.closing-poem-bookmark {
+  position: absolute;
+  top: -2px;
+  left: 2rem;
+  width: 14px;
+  height: 28px;
+  z-index: 2;
+}
+.closing-poem-bookmark svg {
+  width: 100%;
+  height: 100%;
+}
+/* Text */
+.closing-poem-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.closing-poem-text p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 2.1;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  margin: 0;
+}
+.closing-poem-sep {
+  width: 30px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 1rem auto;
+}
+.closing-poem-final {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  font-style: normal !important;
+  letter-spacing: 0.02em;
+}
+
+/* ── Entrance animations ── */
+.milestone {
+  animation: fadeUp 0.7s var(--ease-out) both;
+}
+.milestone:nth-child(1) { animation-delay: 0.1s; }
+.milestone:nth-child(2) { animation-delay: 0.2s; }
+.milestone:nth-child(3) { animation-delay: 0.3s; }
+
+.journey-opening {
+  animation: fadeUp 0.8s var(--ease-out) both;
+}
+.growth-stats-panel {
+  animation: fadeUp 0.8s var(--ease-out) both;
+  animation-delay: 0.15s;
+}
+.closing-poem {
+  animation: fadeUp 0.9s var(--ease-out) both;
+  animation-delay: 0.2s;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .journey-layout {
+    padding: 2.5rem 1rem 3rem;
+  }
+  .journey-opening {
+    padding: 1.5rem 1.2rem 1.3rem;
+  }
+  .journey-opening p {
+    font-size: 1.05rem;
+  }
+  .growth-stats-panel {
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .growth-stat-item {
+    min-width: 70px;
+  }
+  .growth-stat-num {
+    font-size: 1.6rem;
+  }
+  .growth-stat-divider {
+    display: none;
+  }
+  .milestone {
+    grid-template-columns: 24px 1fr;
+    gap: 1rem;
+  }
+  .milestone-title {
+    font-size: 1.1rem;
+  }
+  .milestone-body p {
+    font-size: 0.98rem;
+  }
+  .travel-footprint {
+    padding: 1rem 1rem;
+  }
+  .closing-poem {
+    padding: 2rem 1.5rem 2rem 2.5rem;
+    margin-top: 2rem;
+  }
+  .closing-poem-text p {
+    font-size: 0.95rem;
+  }
+  .closing-poem-final {
+    font-size: 1.05rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .milestone-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
