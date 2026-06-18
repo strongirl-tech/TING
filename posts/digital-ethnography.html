@@ -10,12 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="../index.html" class="nav-logo">TING</a>
       <div class="nav-links">
         <a href="../index.html">首页</a>
-        <a href="../blog.html">博客</a>
+        <a href="../blog.html" class="active">博客</a>
         <a href="../growth.html">成长记录</a>
         <a href="../about.html">关于</a>
       </div>
@@ -27,67 +32,191 @@
     </div>
   </nav>
 
-  <header class="post-header">
-    <div class="post-header-meta">
-      <time datetime="2026-04-12">2026年4月12日</time>
-      <span class="post-tag">田野笔记</span>
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 230 C98 210 52 204 30 185" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 185 C162 165 208 158 228 138" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 140 C104 124 66 116 46 100" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 100 C156 86 196 78 214 62" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+
+    <div class="container post-hero-inner">
+      <nav class="post-breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">博客</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>田野笔记</span>
+      </nav>
+
+      <div class="post-meta-row">
+        <span class="post-tag-pill">田野笔记</span>
+        <time class="post-meta-time" datetime="2026-04-12">2026年4月12日</time>
+        <span class="post-read-time">☕ 约 6 分钟阅读</span>
+      </div>
+
+      <h1 class="post-hero-title">数字民族志</h1>
+      <p class="post-hero-subtitle">在「她乡」论坛中观察身份协商</p>
     </div>
-    <h1>数字民族志：在「她乡」论坛中观察身份协商</h1>
   </header>
 
-  <article class="post-body">
-    <p>作为一名关注海外华人女性身份认同的研究者，我选择了一个特殊的田野——「她乡」（Women Overseas）论坛。这是一个面向海外华人女性的在线社区，注册用户在这里讨论移民签证、职业发展、人际关系、自我成长等话题。本文记录了我在这个数字田野中的一些初步观察。</p>
+  <!-- Post Body — centered single column, no sidebar -->
+  <div class="container post-layout-center" id="postContent">
 
-    <h2>为什么选择「她乡」作为田野</h2>
+    <!-- Lede -->
+    <blockquote class="lede-quote">
+      <span class="lede-mark">"</span>
+      她指向女性主体性，乡暗示着对归属感的寻找。
+      <cite>— 田野手记</cite>
+    </blockquote>
 
-    <p>「她乡」这个名字本身就蕴含着丰富的身份隐喻。她指向女性主体性，乡暗示着对归属感的寻找。论坛的版块设置几乎覆盖了海外华人女性生活的所有重要维度：移民签证、职业生涯、人际关系、自我发展、书影音游、生活分享……</p>
+    <!-- Intro section -->
+    <section id="s-intro" class="post-section">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        为什么选择「她乡」作为田野
+      </h2>
+      <p>作为一名关注海外华人女性身份认同的研究者，我选择了一个特殊的田野——「她乡」（Women Overseas）论坛。这是一个面向海外华人女性的在线社区，注册用户在这里讨论移民签证、职业发展、人际关系、自我成长等话题。</p>
+      <p>论坛的版块设置几乎覆盖了海外华人女性生活的所有重要维度：移民签证、职业生涯、人际关系、自我发展、书影音游、生活分享……更重要的是，这个论坛的互动模式为观察身份协商提供了丰富的素材。用户在这里进行着各种形式的身份表达：从新人报道中的自我介绍，到树洞帖中的深度自我表露，再到互助版块中的知识共享行为。</p>
+    </section>
 
-    <p>更重要的是，这个论坛的互动模式为观察身份协商提供了丰富的素材。用户在这里进行着各种形式的身份表达：从新人报道中的自我介绍，到树洞帖中的深度自我表露，再到互助版块中的知识共享行为。</p>
+    <!-- Section heading: observation scenarios -->
+    <div class="fieldnote-divider">
+      <span class="fieldnote-divider-label">观察记录</span>
+    </div>
 
-    <h2>观察到的几个身份协商场景</h2>
+    <!-- Observation Card 1 -->
+    <div class="fieldnote-card" id="s-scene1">
+      <div class="fieldnote-card-header">
+        <span class="fieldnote-number">观察 01</span>
+        <span class="fieldnote-card-tag">职业身份</span>
+      </div>
+      <h3 class="fieldnote-card-title">职业身份的重新定义</h3>
+      <p>在职业生涯版块中，一个标题为"辞职、GAP、FIRE，以及重新找工"的帖子引发了广泛讨论。发帖者讲述了自己从一份稳定工作中辞职、经历间隔年后重新找工作的经历。评论区中，多位用户分享了自己类似的经历和感受。</p>
+      <blockquote class="pull-quote">
+        "这种讨论在传统的社会叙事中往往被视为偏离正轨，但在「她乡」的语境中，它被赋予了新的意义——一种<em>主动的身份选择和自我探索</em>。"
+      </blockquote>
+      <p>海外华人女性在这里重新定义了"成功的职业生涯"意味着什么。</p>
+    </div>
 
-    <h3>场景一：职业身份的重新定义</h3>
+    <!-- Observation Card 2 -->
+    <div class="fieldnote-card" id="s-scene2">
+      <div class="fieldnote-card-header">
+        <span class="fieldnote-number">观察 02</span>
+        <span class="fieldnote-card-tag">关系身份</span>
+      </div>
+      <h3 class="fieldnote-card-title">关系身份的多元探索</h3>
+      <p>人际关系版块中有一个引人注目的子版块——"姬仔交友"（LGBTQ Dating）。在这里，用户讨论着 QPR（准浪漫关系）、代孕、婚姻对女性社交坐标的影响等话题。</p>
+      <p>一个标题为"我的 QPR 成家之路"的帖子，记录了一位用户在非传统关系模式中寻找归属感的过程。这种在匿名空间中的坦诚分享，为观察海外华人女性如何协商性/性别身份提供了珍贵的<strong>一手材料</strong>。</p>
+    </div>
 
-    <p>在职业生涯版块中，一个标题为辞职、GAP、FIRE，以及重新找工的帖子引发了广泛讨论。发帖者讲述了自己从一份稳定工作中辞职、经历间隔年后重新找工作的经历。评论区中，多位用户分享了自己类似的经历和感受。</p>
+    <!-- Observation Card 3 -->
+    <div class="fieldnote-card" id="s-scene3">
+      <div class="fieldnote-card-header">
+        <span class="fieldnote-number">观察 03</span>
+        <span class="fieldnote-card-tag">心理身份</span>
+      </div>
+      <h3 class="fieldnote-card-title">心理身份的集体疗愈</h3>
+      <p>自我发展版块中，一个 C-PTSD 的求助帖子获得了大量关注和回应。发帖者公开分享了自己的创伤经历，评论区则充满了温暖的支持和共鸣。</p>
+      <div class="post-stat-badge">
+        <span class="stat-icon">🌱</span>
+        <span>这种互动模式揭示了数字空间的一个独特功能：它为海外华人女性提供了一个<strong>安全的心理支持网络</strong>，通过互助建构一种"我们"的集体身份</span>
+      </div>
+      <p>在异国他乡，面对文化差异和身份焦虑，这种集体疗愈行为本身就是一种身份协商。</p>
+    </div>
 
-    <p>这种讨论在传统的社会叙事中往往被视为偏离正轨，但在「她乡」的语境中，它被赋予了新的意义——一种主动的身份选择和自我探索。海外华人女性在这里重新定义了成功的职业生涯意味着什么。</p>
+    <!-- Section heading: methodology -->
+    <div class="fieldnote-divider">
+      <span class="fieldnote-divider-label">方法论反思</span>
+    </div>
 
-    <h3>场景二：关系身份的多元探索</h3>
+    <!-- Methodology Panel -->
+    <div class="method-panel" id="s-method">
+      <div class="method-item">
+        <div class="method-icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="#4A7C5A" stroke-width="1.4"/>
+            <path d="M10 5.5V10.5M10 13V14.5" stroke="#4A7C5A" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="method-text">
+          <h4>关于知情同意</h4>
+          <p>虽然论坛是公开的，但用户可能没有预期自己的发言会被用于学术研究。我在引用具体帖子内容时，需要仔细考虑<strong>匿名化处理</strong>。</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="#4A7C5A" stroke-width="1.4"/>
+            <path d="M7 7C7 5.34 8.34 4 10 4C11.66 4 13 5.34 13 7C13 9 10 9.5 10 12" stroke="#4A7C5A" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="10" cy="15" r="0.8" fill="#4A7C5A"/>
+          </svg>
+        </div>
+        <div class="method-text">
+          <h4>关于研究者身份</h4>
+          <p>作为海外华人女性群体的一员，我的内部者身份既是一种<strong>优势</strong>（更容易理解语境），也可能是一种<strong>偏见</strong>（可能过度认同某些观点）。保持反思性是必要的。</p>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="14" height="14" rx="2" stroke="#4A7C5A" stroke-width="1.4"/>
+            <path d="M6.5 10L9 12.5L13.5 7.5" stroke="#4A7C5A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="method-text">
+          <h4>关于数据解读</h4>
+          <p>论坛帖子是自发表达，缺乏结构化访谈的深度。我需要避免过度解读，同时通过<strong>多种数据来源进行交叉验证</strong>。</p>
+        </div>
+      </div>
+    </div>
 
-    <p>人际关系版块中有一个引人注目的子版块——姬仔交友（LGBTQ Dating）。在这里，用户讨论着QPR（准浪漫关系）、代孕、婚姻对女性社交坐标的影响等话题。</p>
+    <!-- Section: conclusion -->
+    <section id="s-conclusion" class="post-section post-section-conclusion">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        初步结论
+      </h2>
+      <p>「她乡」论坛作为一个数字田野，为研究海外华人女性的身份认同提供了丰富的素材。通过系统抓取和编码帖子内容，对高频话题进行主题分析，我发现了几个反复出现的身份协商模式：</p>
+      <div class="conclusion-tags">
+        <span class="conclusion-tag">职业身份的重新定义</span>
+        <span class="conclusion-tag">关系身份的多元探索</span>
+        <span class="conclusion-tag">心理身份的集体疗愈</span>
+        <span class="conclusion-tag">技术身份的赋权重构</span>
+      </div>
+      <p>这些发现为理解海外华人女性在数字时代如何建构和协商自己的身份提供了新的视角。研究仍在继续，期待后续更深入的分析。</p>
+      <p class="post-closing-line">田野没有终点，只有更深的凝视。</p>
+    </section>
 
-    <p>一个标题为我的QPR成家之路的帖子，记录了一位用户在非传统关系模式中寻找归属感的过程。这种在匿名空间中的坦诚分享，为观察海外华人女性如何协商性/性别身份提供了珍贵的一手材料。</p>
+  </div>
 
-    <h3>场景三：心理身份的集体疗愈</h3>
-
-    <p>自我发展版块中，一个C-PTSD的求助帖子获得了大量关注和回应。发帖者公开分享了自己的创伤经历，评论区则充满了温暖的支持和共鸣。</p>
-
-    <p>这种互动模式揭示了数字空间的一个独特功能：它为海外华人女性提供了一个安全的心理支持网络。在异国他乡，面对文化差异和身份焦虑，这种集体疗愈行为本身就是一种身份协商——通过互助，她们在建构一种我们的集体身份。</p>
-
-    <h2>方法论反思</h2>
-
-    <p>在进行数字民族志研究时，我始终在思考几个伦理和方法论问题：</p>
-
-    <p><strong>关于知情同意：</strong>虽然论坛是公开的，但用户可能没有预期自己的发言会被用于学术研究。我在引用具体帖子内容时，需要仔细考虑匿名化处理。</p>
-
-    <p><strong>关于研究者身份：</strong>作为海外华人女性群体的一员，我的内部者身份既是一种优势（更容易理解语境），也可能是一种偏见（可能过度认同某些观点）。保持反思性是必要的。</p>
-
-    <p><strong>关于数据解读：</strong>论坛帖子是自发表达，缺乏结构化访谈的深度。我需要避免过度解读，同时通过多种数据来源进行交叉验证。</p>
-
-    <h2>初步结论</h2>
-
-    <p>「她乡」论坛作为一个数字田野，为研究海外华人女性的身份认同提供了丰富的素材。通过系统抓取和编码帖子内容，对高频话题进行主题分析，我发现了几个反复出现的身份协商模式：职业身份的重新定义、关系身份的多元探索、心理身份的集体疗愈，以及技术身份的赋权重构。</p>
-
-    <p>这些发现为理解海外华人女性在数字时代如何建构和协商自己的身份提供了新的视角。研究仍在继续，期待后续更深入的分析。</p>
-  </article>
-
-  <div class="container">
-    <div class="post-nav">
-      <a href="bell-hooks-reading.html">&larr; 上一篇</a>
-      <a href="vibe-coding-and-identity.html">下一篇 &rarr;</a>
+  <!-- Post Footer Navigation -->
+  <div class="post-footer-bar">
+    <div class="container post-footer-inner">
+      <a href="../blog.html" class="post-back-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 3L5 7.5L9.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        返回博客
+      </a>
+      <div class="post-tag-row">
+        <span class="post-tag-pill">田野笔记</span>
+        <span class="post-tag-pill">数字民族志</span>
+        <span class="post-tag-pill">她乡论坛</span>
+      </div>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <p>&copy; 2025 TING. All rights reserved.</p>
@@ -98,5 +227,21 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    /* ── Reading progress bar ── */
+    (function () {
+      var bar = document.getElementById('readingProgress');
+      var content = document.getElementById('postContent');
+      function tick() {
+        var rect = content.getBoundingClientRect();
+        var total = content.offsetHeight;
+        var read = -rect.top + window.innerHeight * 0.6;
+        var pct = Math.min(Math.max(read / total * 100, 0), 100);
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+  </script>
 </body>
 </html>
