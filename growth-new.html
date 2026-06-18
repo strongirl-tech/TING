@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成长记录：读研三年，认知的重塑 - TING</title>
+  <meta name="description" content="读研三年，从煎熬到北极圈看极光。这不是逆袭故事，是找到自己的故事。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Open Graph / 分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TING">
+  <meta property="og:title" content="成长记录：读研三年，认知的重塑 - TING">
+  <meta property="og:description" content="读研三年，从煎熬到北极圈看极光。这不是逆袭故事，是找到自己的故事。">
+  <meta property="og:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+  <meta property="og:url" content="https://strongirl-tech.github.io/TING/growth-new.html">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="成长记录：读研三年，认知的重塑 - TING">
+  <meta name="twitter:description" content="读研三年，从煎熬到北极圈看极光。这不是逆袭故事，是找到自己的故事。">
+  <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+
+  <!-- QR Code Floating Button -->
+<style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 22px;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 36px 40px 28px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-popup h3 { margin: 0 0 6px; color: #2E4A35; font-size: 18px; }
+    .qr-popup p { margin: 0 0 18px; color: #666; font-size: 13px; }
+    .qr-popup img { border: 1px solid #e0e0e0; border-radius: 8px; }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 28px 20px 20px; }
+      .qr-popup img { width: 200px !important; height: 200px !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">TING</a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="blog.html">博客</a>
+        <a href="growth.html" class="active">成长记录</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 80 C100 70 70 80 50 110" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 80 C160 70 190 80 210 110" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 160 C100 150 70 160 50 190" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+      <path d="M130 160 C160 150 190 160 210 190" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+    <div class="container post-hero-inner">
+      <div class="post-breadcrumb">
+        <a href="index.html">首页</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>成长记录</span>
+      </div>
+      <div class="post-meta-row">
+        <span class="post-tag-pill">个人故事</span>
+        <time class="post-meta-time" datetime="2026-01-10">2026.01.10</time>
+        <span class="post-read-time">约 5 分钟阅读</span>
+      </div>
+      <h1 class="post-hero-title">成长记录：读研三年，认知的重塑</h1>
+      <p class="post-hero-subtitle">三年 · 三座城 · 八个国家 · 一次与自己重逢</p>
+    </div>
+  </header>
+
+  <!-- Journey Layout -->
+  <div class="journey-layout">
+
+    <!-- Opening Statement -->
+    <div class="journey-opening">
+      <div class="journey-opening-mark">"</div>
+      <p>说真的，读研可以改变命运。</p>
+      <p>读研确实改变了我的命运。</p>
+      <div class="journey-opening-line"></div>
+      <p class="journey-opening-note">一直没有分享过我的读研生涯，快毕业了，想写点东西记录一下这三年。</p>
+    </div>
+
+    <!-- Growth Stats Panel -->
+    <div class="growth-stats-panel">
+      <div class="growth-stat-item">
+        <span class="growth-stat-num">3</span>
+        <span class="growth-stat-label">年读研</span>
+      </div>
+      <div class="growth-stat-divider"></div>
+      <div class="growth-stat-item">
+        <span class="growth-stat-num">8+</span>
+        <span class="growth-stat-label">个国家</span>
+      </div>
+      <div class="growth-stat-divider"></div>
+      <div class="growth-stat-item">
+        <span class="growth-stat-num">12</span>
+        <span class="growth-stat-label">家米其林</span>
+      </div>
+      <div class="growth-stat-divider"></div>
+      <div class="growth-stat-item">
+        <span class="growth-stat-num">1</span>
+        <span class="growth-stat-label">次极光</span>
+      </div>
+    </div>
+
+    <!-- Vertical Timeline -->
+    <div class="journey-timeline">
+
+      <!-- ── Milestone 1: 研一 ── -->
+      <div class="milestone" id="m1">
+        <div class="milestone-marker">
+          <div class="milestone-dot milestone-dot--rose"></div>
+          <div class="milestone-line"></div>
+        </div>
+        <div class="milestone-content">
+          <div class="milestone-header">
+            <span class="milestone-phase">研一</span>
+            <span class="milestone-year">2023.09 — 2024.06</span>
+          </div>
+          <h2 class="milestone-title">那些煎熬的日子，后来都成了勋章</h2>
+
+          <div class="milestone-body">
+            <p>2023年9月，时隔两年重新回到校园，心里其实很慌。班上只有个位数的学生，全都来自"山河四省"——山西、山东、河南、河北，那些高考最卷的省份。大家都很优秀，曾经 Gap 过两年的我完全跟不上大家的节奏，这样的学习生活很难熬。</p>
+            <p>第二学期开始做兼职——家教、监考、翻译，当然也有家里的支持。成绩排名倒数第二，全靠综合测评拉上来，勉强拿了三等奖学金。</p>
+          </div>
+
+          <div class="milestone-insight milestone-insight--rose">
+            <svg class="milestone-insight-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 6 V11 M10 13.5 V14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p>研一过得很痛苦。但这一年结束后，我立刻开始了出国旅行，把研究生会主席的职责丢到了一边。<strong>那是我重新夺回生活掌控权的方式。</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Milestone 2: 研二 ── -->
+      <div class="milestone" id="m2">
+        <div class="milestone-marker">
+          <div class="milestone-dot milestone-dot--green"></div>
+          <div class="milestone-line"></div>
+        </div>
+        <div class="milestone-content">
+          <div class="milestone-header">
+            <span class="milestone-phase milestone-phase--green">研二</span>
+            <span class="milestone-year">2024.07 — 2025.06</span>
+          </div>
+          <h2 class="milestone-title">一个人，一张机票，一个世界</h2>
+
+          <div class="milestone-body">
+            <p>研二是真正改变我的一年。因为在北京，大兴机场成了极好的出发地。第一次出国是去新加坡参加 NUS 暑期学校，那是我第一次意识到——原来外面并不危险。</p>
+            <p>之后，我一个人去了韩国、俄罗斯、菲律宾、日本、卡塔尔、肯尼亚、坦桑尼亚、泰国……我喜欢自然地理和人文历史，也爱探索美食，还以美食博主的"马甲"记录旅途中的味道。第二外语学了日语，最喜欢的国家是俄罗斯——那里的人很善良，我看到了极光。</p>
+          </div>
+
+          <!-- Travel Footprint -->
+          <div class="travel-footprint">
+            <div class="travel-footprint-label">
+              <svg class="travel-footprint-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 1.5 C11.5 5.5 13 8 8 14.5 C3 8 4.5 5.5 8 1.5Z" fill="#4A7C5A" opacity="0.8"/>
+                <circle cx="8" cy="6" r="1.5" fill="#fff" opacity="0.7"/>
+              </svg>
+              旅行足迹
+            </div>
+            <div class="travel-footprint-tags">
+              <span class="travel-tag">🇸🇬 新加坡</span>
+              <span class="travel-tag">🇰🇷 韩国</span>
+              <span class="travel-tag travel-tag--fav">🇷🇺 俄罗斯 ★</span>
+              <span class="travel-tag">🇵🇭 菲律宾</span>
+              <span class="travel-tag">🇯🇵 日本</span>
+              <span class="travel-tag">🇶🇦 卡塔尔</span>
+              <span class="travel-tag">🇰🇪 肯尼亚</span>
+              <span class="travel-tag">🇹🇿 坦桑尼亚</span>
+              <span class="travel-tag">🇹🇭 泰国</span>
+            </div>
+          </div>
+
+          <div class="milestone-body">
+            <p>在菲律宾看到了贫富差距的真实面貌，在卡塔尔发现抖音上说的和现实并不一样。旅行教会我的不是"有钱在哪里都好玩"，而是——<strong>世界很大，人很小，但心可以很宽。</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Milestone 3: 研三 ── -->
+      <div class="milestone" id="m3">
+        <div class="milestone-marker">
+          <div class="milestone-dot milestone-dot--amber"></div>
+        </div>
+        <div class="milestone-content">
+          <div class="milestone-header">
+            <span class="milestone-phase milestone-phase--amber">研三</span>
+            <span class="milestone-year">2025.07 — 至今</span>
+          </div>
+          <h2 class="milestone-title">北京教会我的那些事</h2>
+
+          <div class="milestone-body">
+            <p>研三开始收心了。实习四个月，实际只去了 21 天班。其余时间靠做家教、监考、翻译来养活自己，当然也有家里的支持。同事都劝我"多玩玩"，说我还年轻，不要把时间都花在工作上。</p>
+          </div>
+
+          <div class="milestone-insight milestone-insight--green">
+            <svg class="milestone-insight-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2 L12.5 7 L18 7.5 L14 11.5 L15 17 L10 14 L5 17 L6 11.5 L2 7.5 L7.5 7 Z" fill="currentColor" opacity="0.85"/>
+            </svg>
+            <p><strong>北京很适合消费，北京的包容度很高，不管你贫穷还是富有，这里都有属于你的一块区域。</strong></p>
+          </div>
+
+          <div class="milestone-body">
+            <p>半年内我打卡了 12 家米其林和黑珍珠餐厅，去上了舞蹈课，遇见了很多很厉害的人。</p>
+            <p>现在快毕业了，未来还不确定。但回头看看这三年——读研给我的远不止一个学位。它给了我重新出发的勇气，给了我一个人走向世界的能力，也给了我与自己和解的时间。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /Timeline -->
+
+    <!-- Closing Poem Card -->
+    <div class="closing-poem">
+      <div class="closing-poem-bookmark">
+        <svg viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M1 1 L1 23 L6 18 L11 23 L11 1 Z" fill="#9B5E6A" opacity="0.8" stroke="#7A3F4C" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="closing-poem-text">
+        <p>从学习的卷，到道路的宽。</p>
+        <p>从在学校中挣扎，到一个人去北极圈看极光。</p>
+        <p>从紧绷，到自由。</p>
+        <p>从不安，到平静。</p>
+        <p>从忐忑焦虑，到坦然接受。</p>
+        <div class="closing-poem-sep"></div>
+        <p>这不是一个逆袭故事。</p>
+        <p class="closing-poem-final">这是一个找到自己的故事。</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- /Journey Layout -->
+
+  <!-- Post Footer Bar -->
+  <div class="container">
+    <div class="post-footer-bar">
+      <div class="post-footer-inner">
+        <a href="blog.html" class="post-back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 L5 8 L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          返回博客
+        </a>
+        <a href="index.html" class="post-back-link">
+          返回首页
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3 L11 8 L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <span class="footer-brand">TING</span>
+      <p>© 2025–2026 &nbsp;·&nbsp; All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/strongirl-tech/TING" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Reading progress bar
+    (function() {
+      var bar = document.getElementById('readingProgress');
+      function update() {
+        var h = document.documentElement;
+        var scroll = h.scrollTop || document.body.scrollTop;
+        var height = h.scrollHeight - h.clientHeight;
+        var pct = height > 0 ? (scroll / height * 100) : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+
+  <!-- QR Code Floating Button -->
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <h3>扫码访问</h3>
+      <p>使用手机扫描二维码访问本页</p>
+      <img src="assets/site-qrcode.png" alt="扫码访问 TING" style="width:220px;height:220px;border:1px solid #e0e0e0;border-radius:8px;">
+    </div>
+  </div>
+    <script>
+    function toggleQR() {
+      document.getElementById('qrOverlay').classList.add('active');
+    }
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+  </script>
+</body>
+</html>
