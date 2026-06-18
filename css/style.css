@@ -1,4 +1,4 @@
-/* ===== Reset & Base ===== */
+﻿/* ===== Reset & Base ===== */
 *,
 *::before,
 *::after {
@@ -976,6 +976,293 @@ img {
   }
 
   .section-title::after {
+    display: none;
+  }
+}
+
+
+
+/* ================================================================
+   BOTANICAL GREEN ENHANCEMENTS — TING
+   植物绿色主题增强
+   ================================================================ */
+
+:root {
+  /* ── Extended Green Palette ── */
+  --color-forest:       #2A5239;   /* deep forest */
+  --color-leaf:         #4A7C5A;   /* botanical leaf */
+  --color-leaf-light:   #7BAE8A;   /* light leaf */
+  --color-leaf-mist:    #E4EDE7;   /* misty leaf bg */
+  --color-moss:         #D4E6DA;   /* moss tone */
+  --color-canopy:       #3D7A52;   /* canopy green */
+  --color-shadow-green: rgba(42, 82, 57, 0.12);
+}
+
+/* ── Hero: thin green top stripe ── */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-forest) 25%,
+    var(--color-leaf) 50%,
+    var(--color-forest) 75%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Hero: subtle green ambient glow ── */
+.hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(74, 124, 90, 0.06) 0%, transparent 65%),
+    radial-gradient(circle at 15% 80%, rgba(42, 82, 57, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(42, 82, 57, 0.04) 0%, transparent 40%),
+    var(--color-bg);
+}
+
+/* ── Leaf Canvas ── */
+#leaf-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Botanical Corner Decorations ── */
+.hero-botanical {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-botanical--tl {
+  top: -10px;
+  left: -10px;
+  width: 150px;
+  height: 150px;
+}
+
+.hero-botanical--br {
+  bottom: -10px;
+  right: -10px;
+  width: 150px;
+  height: 150px;
+}
+
+.hero-botanical--tr {
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 90px;
+  opacity: 0.7;
+}
+
+.hero-botanical--bl {
+  bottom: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  opacity: 0.7;
+}
+
+/* ── Hero divider: rose-to-green gradient ── */
+.hero-divider {
+  width: 50px;
+  background: linear-gradient(to right, var(--color-accent), var(--color-leaf));
+}
+
+/* ── Hero title span: green accent ── */
+.hero-title span {
+  color: var(--color-leaf) !important;
+  position: relative;
+}
+
+.hero-title span::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-leaf-light), transparent);
+}
+
+/* ── Section leaf deco icon ── */
+.section-leaf-deco {
+  width: 14px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.78;
+  transition: opacity 0.3s;
+}
+
+/* ── Section number: forest green ── */
+.section-number {
+  color: var(--color-leaf);
+}
+
+/* ── Section title underline: forest green ── */
+.section-title::after {
+  background: linear-gradient(to right, var(--color-leaf), var(--color-accent));
+}
+
+/* ── Post cards: green left accent bar on hover ── */
+.post-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-leaf) 0%,
+    var(--color-leaf-light) 100%
+  );
+  border-radius: 1px;
+  transition: height 0.4s var(--ease-out);
+}
+
+.post-card:hover::after {
+  height: 55%;
+}
+
+/* ── Post card: green border glow on hover ── */
+.post-card:hover {
+  border-color: rgba(74, 124, 90, 0.28);
+  box-shadow: 0 8px 32px var(--color-shadow-green);
+}
+
+/* ── Post card top bar: green-to-rose gradient ── */
+.post-card::before {
+  background: linear-gradient(90deg, var(--color-leaf), var(--color-accent));
+}
+
+/* ── Post tag alt: forest green ── */
+.post-tag--alt {
+  background-color: var(--color-leaf-mist);
+  color: var(--color-leaf);
+  border: 1px solid rgba(74, 124, 90, 0.15);
+}
+
+/* ── Read-more link: green on hover ── */
+.read-more:hover {
+  color: var(--color-leaf);
+}
+
+/* ── About section: subtle green ambient ── */
+.section--about {
+  position: relative;
+}
+
+.section--about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 80% at 75% 50%,
+    rgba(74, 124, 90, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Botanical Tree SVG ── */
+.about-tree-svg {
+  width: 210px;
+  height: 235px;
+  animation: treeSway 7s ease-in-out infinite, gentleFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 22px rgba(42, 82, 57, 0.2));
+}
+
+@keyframes treeSway {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  30%       { transform: rotate(0.7deg) translateY(-1px); }
+  70%       { transform: rotate(-0.7deg) translateY(-3px); }
+}
+
+/* ── About btn: green variant ── */
+.btn-green {
+  border-color: var(--color-leaf) !important;
+  color: var(--color-leaf) !important;
+}
+
+.btn-green:hover {
+  background-color: var(--color-leaf) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 18px var(--color-shadow-green) !important;
+}
+
+/* ── Footer: subtle green tint ── */
+.footer {
+  border-top-color: rgba(74, 124, 90, 0.15);
+  background: linear-gradient(
+    0deg,
+    rgba(74, 124, 90, 0.03) 0%,
+    transparent 100%
+  );
+}
+
+/* ── Scrollbar: green ── */
+::-webkit-scrollbar-thumb {
+  background: var(--color-leaf-mist);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-leaf-light);
+}
+
+/* ── Selection: green tint ── */
+::selection {
+  background: rgba(74, 124, 90, 0.16);
+  color: var(--color-text);
+}
+
+/* ── Focus: green ring ── */
+:focus-visible {
+  outline-color: var(--color-leaf);
+}
+
+/* ── Responsive: botanical corners scale down ── */
+@media (max-width: 768px) {
+  .hero-botanical--tl,
+  .hero-botanical--br {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-botanical--tr,
+  .hero-botanical--bl {
+    width: 60px;
+    height: 60px;
+  }
+
+  .about-tree-svg {
+    width: 165px;
+    height: 185px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-botanical--tl,
+  .hero-botanical--br {
+    width: 75px;
+    height: 75px;
+  }
+
+  .hero-botanical--tr,
+  .hero-botanical--bl {
     display: none;
   }
 }
