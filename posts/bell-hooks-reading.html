@@ -10,12 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="../index.html" class="nav-logo">TING</a>
       <div class="nav-links">
         <a href="../index.html">首页</a>
-        <a href="../blog.html">博客</a>
+        <a href="../blog.html" class="active">博客</a>
         <a href="../growth.html">成长记录</a>
         <a href="../about.html">关于</a>
       </div>
@@ -27,65 +32,200 @@
     </div>
   </nav>
 
-  <header class="post-header">
-    <div class="post-header-meta">
-      <time datetime="2026-02-18">2026年2月18日</time>
-      <span class="post-tag">读书笔记</span>
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 230 C98 210 52 204 30 185" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 185 C162 165 208 158 228 138" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 140 C104 124 66 116 46 100" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 100 C156 86 196 78 214 62" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+
+    <div class="container post-hero-inner">
+      <nav class="post-breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">博客</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>读书笔记</span>
+      </nav>
+
+      <div class="post-meta-row">
+        <span class="post-tag-pill">读书笔记</span>
+        <time class="post-meta-time" datetime="2026-02-18">2026年2月18日</time>
+        <span class="post-read-time">☕ 约 6 分钟阅读</span>
+      </div>
+
+      <h1 class="post-hero-title">重读 bell hooks</h1>
+      <p class="post-hero-subtitle">从边缘到中心的女性主义思考</p>
     </div>
-    <h1>重读 bell hooks：从边缘到中心的女性主义思考</h1>
   </header>
 
-  <article class="post-body">
-    <p>在「她乡」论坛的书影音游版块中，有用户发起了对 bell hooks《女权主义理论：从边缘到中心》（Feminist Theory: From Margin to Center）的集体阅读和讨论。这促使我重新翻开这本书——这一次，是在跨国生活的语境下。</p>
+  <!-- Post Body — centered single column, reading journal style -->
+  <div class="container post-layout-center" id="postContent">
 
-    <h2>边缘在跨国语境中的新含义</h2>
+    <!-- Book Info Card -->
+    <div class="book-info-card">
+      <div class="book-spine"></div>
+      <div class="book-info-body">
+        <div class="book-info-row">
+          <div class="book-info-title">女权主义理论：从边缘到中心</div>
+          <div class="book-info-en">Feminist Theory: From Margin to Center</div>
+        </div>
+        <div class="book-info-meta">
+          <div class="book-info-item">
+            <span class="book-info-label">作者</span>
+            <span class="book-info-value">bell hooks</span>
+          </div>
+          <div class="book-info-item">
+            <span class="book-info-label">首版</span>
+            <span class="book-info-value">1984</span>
+          </div>
+          <div class="book-info-item">
+            <span class="book-info-label">类别</span>
+            <span class="book-info-value">女性主义理论</span>
+          </div>
+          <div class="book-info-item">
+            <span class="book-info-label">阅读语境</span>
+            <span class="book-info-value">跨国生活</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <p>hooks在书中反复强调，主流女性主义运动往往以白人中产阶级女性的经验为中心，而将黑人女性、工人阶级女性等群体推向边缘。这个论断在1984年首次出版时就具有革命性，而在四十年后的今天，当我以一个海外华人女性的身份重新阅读它时，边缘这个词有了新的层次。</p>
-
-    <p>在海外生活中，边缘不仅关乎性别和阶级，还关乎种族、语言、移民身份和文化归属。一个在异国职场中工作的华人女性，可能同时处于性别、种族和移民身份的多重边缘。hooks关于交叉性的论述，在这种语境中获得了更加具体的回响。</p>
-
-    <blockquote>
-      真正的女性主义不仅仅是关于性别平等的。它是关于消除所有形式的压迫——包括种族主义、阶级主义和帝国主义。
+    <!-- Lede -->
+    <blockquote class="lede-quote">
+      <span class="lede-mark">"</span>
+      在「她乡」论坛的书影音游版块中，有用户发起了对 bell hooks《女权主义理论：从边缘到中心》的集体阅读和讨论。这促使我重新翻开这本书——这一次，是在跨国生活的语境下。
+      <cite>— 读书手记</cite>
     </blockquote>
 
-    <h2>论坛讨论中的hooks</h2>
+    <!-- Section 1 -->
+    <section id="s1" class="post-section">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        边缘在跨国语境中的新含义
+      </h2>
+      <p>hooks在书中反复强调，主流女性主义运动往往以白人中产阶级女性的经验为中心，而将黑人女性、工人阶级女性等群体推向边缘。这个论断在1984年首次出版时就具有革命性，而在四十年后的今天，当我以一个海外华人女性的身份重新阅读它时，<span class="text-highlight">边缘这个词有了新的层次</span>。</p>
+      <p>在海外生活中，边缘不仅关乎性别和阶级，还关乎种族、语言、移民身份和文化归属。一个在异国职场中工作的华人女性，可能同时处于性别、种族和移民身份的<span class="text-highlight">多重边缘</span>。hooks关于交叉性的论述，在这种语境中获得了更加具体的回响。</p>
+    </section>
 
-    <p>论坛中关于这本书的讨论本身就很有意思。用户们不是在做学术性的文本分析，而是在分享阅读过程中的个人感悟。有人谈到hooks对家庭概念的批判如何让她重新审视自己的婚姻关系，有人讨论hooks对姐妹情谊的论述如何在海外华人女性的互助实践中得到了印证。</p>
+    <!-- Reading Annotation (批注卡片) -->
+    <div class="reading-annotation">
+      <div class="annotation-marker">批注</div>
+      <p>真正的女性主义不仅仅是关于性别平等的。它是关于消除所有形式的压迫——包括种族主义、阶级主义和帝国主义。</p>
+      <cite class="annotation-source">— bell hooks, p.37</cite>
+    </div>
 
-    <p>这种阅读方式让我想到hooks本人对学术的态度——她始终反对将理论束之高阁，主张理论应该服务于实践、服务于被压迫者的解放。论坛中的阅读讨论，恰恰是这种实践中的理论的生动体现。</p>
+    <!-- Section 2 -->
+    <section id="s2" class="post-section">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        论坛讨论中的 hooks
+      </h2>
+      <p>论坛中关于这本书的讨论本身就很有意思。用户们不是在做学术性的文本分析，而是在分享阅读过程中的个人感悟。有人谈到hooks对家庭概念的批判如何让她重新审视自己的婚姻关系，有人讨论hooks对姐妹情谊的论述如何在海外华人女性的互助实践中得到了印证。</p>
+      <p>这种阅读方式让我想到hooks本人对学术的态度——<span class="text-highlight">她始终反对将理论束之高阁，主张理论应该服务于实践、服务于被压迫者的解放</span>。论坛中的阅读讨论，恰恰是这种实践中的理论的生动体现。</p>
+    </section>
 
-    <h2>从提升到颠覆</h2>
+    <!-- Section 3 with Concept Comparison -->
+    <section id="s3" class="post-section">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        从提升到颠覆
+      </h2>
+      <p>hooks在书中区分了两种不同的女性主义目标：</p>
 
-    <p>hooks在书中区分了两种不同的女性主义目标：一种是提升（uplift）——让女性进入现有的权力结构；另一种是颠覆（transformation）——从根本上改变权力结构本身。</p>
+      <div class="concept-comparison">
+        <div class="concept-col concept-uplift">
+          <div class="concept-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <path d="M11 18V8M11 8L7 12M11 8L15 12" stroke="#4A7C5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 4H18" stroke="#4A7C5A" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="concept-label">提升 · Uplift</div>
+          <p>让女性进入现有的权力结构</p>
+        </div>
+        <div class="concept-col concept-transform">
+          <div class="concept-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <path d="M4 11H18M18 11L14 7M18 11L14 15" stroke="#9B5E6A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 4V18" stroke="#9B5E6A" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="concept-label">颠覆 · Transformation</div>
+          <p>从根本上改变权力结构本身</p>
+        </div>
+      </div>
 
-    <p>这个区分在海外华人女性的语境中尤其值得思考。当我们谈论女性赋权时，我们是在追求让更多华人女性进入主流权力结构（企业高管、学术精英），还是在追求从根本上改变这些结构中的性别、种族和阶级不平等？</p>
+      <p>这个区分在海外华人女性的语境中尤其值得思考。当我们谈论女性赋权时，我们是在追求让更多华人女性进入主流权力结构（企业高管、学术精英），还是在追求从根本上改变这些结构中的性别、种族和阶级不平等？</p>
+      <p>论坛中关于如何在职场中帮助女性的讨论，某种程度上反映了这种张力。有用户分享女性职业发展项目的信息，也有用户质疑在现有职场结构中追求晋升的意义。这两种立场并非对立，但它们指向了<span class="text-highlight">不同的变革路径</span>。</p>
+    </section>
 
-    <p>论坛中关于如何在职场中帮助女性的讨论，某种程度上反映了这种张力。有用户分享女性职业发展项目的信息，也有用户质疑在现有职场结构中追求晋升的意义。这两种立场并非对立，但它们指向了不同的变革路径。</p>
+    <!-- Section 4 -->
+    <section id="s4" class="post-section">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        「她乡」作为边缘者的空间
+      </h2>
+      <p>hooks强调，被边缘化的人需要创造属于自己的空间，在其中发展自己的声音和力量。「她乡」论坛在某种意义上就是这样一个空间——它为海外华人女性提供了一个在主流叙事之外表达自我、互相支持的平台。</p>
+      <p>论坛的名字「她乡」——<span class="text-highlight">一个属于她的乡</span>——本身就暗示了这种空间创造的努力。它不是试图进入主流话语的中心，而是在边缘处建立一个属于自己的中心。</p>
+      <p>这种空间创造行为，与hooks所倡导的女性主义实践高度契合。它提醒我们，真正的赋权不仅仅是被看见、被听见，更是<span class="text-highlight">拥有定义自己的权利</span>。</p>
+    </section>
 
-    <h2>「她乡」作为边缘者的空间</h2>
+    <!-- Section 5: Reader's Reflection -->
+    <section id="s5" class="post-section reader-reflection">
+      <h2 class="section-heading">
+        <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+          <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+        </svg>
+        阅读之后的思考
+      </h2>
+      <p>重读hooks，我最大的收获是一种更加细致的思考方式。身份认同不是单一的、固定的，而是多重的、流动的。在跨国语境中，海外华人女性的身份认同尤其如此。</p>
+      <p>hooks教会我们，真正的解放不是从边缘走向中心，而是<span class="text-highlight">质疑中心与边缘这个二元结构本身</span>。对于海外华人女性而言，这意味着我们不仅要争取在异国社会中的平等权利，更要创造属于自己的话语空间和文化实践。</p>
+    </section>
 
-    <p>hooks强调，被边缘化的人需要创造属于自己的空间，在其中发展自己的声音和力量。「她乡」论坛在某种意义上就是这样一个空间——它为海外华人女性提供了一个在主流叙事之外表达自我、互相支持的平台。</p>
+    <!-- Bookmark Quote (closing) -->
+    <div class="bookmark-quote">
+      <div class="bookmark-tag">书签</div>
+      <p>正如hooks所说：在哪里我们开始？……我们开始于爱——对自己和他人的爱。也许，这正是「她乡」论坛中那些互助、分享和支持行为最深刻的含义。</p>
+    </div>
 
-    <p>论坛的名字「她乡」——一个属于她的乡——本身就暗示了这种空间创造的努力。它不是试图进入主流话语的中心，而是在边缘处建立一个属于自己的中心。</p>
+  </div>
 
-    <p>这种空间创造行为，与hooks所倡导的女性主义实践高度契合。它提醒我们，真正的赋权不仅仅是被看见、被听见，更是拥有定义自己的权利。</p>
-
-    <h2>阅读之后的思考</h2>
-
-    <p>重读hooks，我最大的收获是一种更加细致的思考方式。身份认同不是单一的、固定的，而是多重的、流动的。在跨国语境中，海外华人女性的身份认同尤其如此。</p>
-
-    <p>hooks教会我们，真正的解放不是从边缘走向中心，而是质疑中心与边缘这个二元结构本身。对于海外华人女性而言，这意味着我们不仅要争取在异国社会中的平等权利，更要创造属于自己的话语空间和文化实践。</p>
-
-    <p>正如hooks所说：在哪里我们开始？……我们开始于爱——对自己和他人的爱。也许，这正是「她乡」论坛中那些互助、分享和支持行为最深刻的含义。</p>
-  </article>
-
-  <div class="container">
-    <div class="post-nav">
-      <a href="../blog.html">返回文章列表</a>
-      <a href="digital-ethnography.html">下一篇 &rarr;</a>
+  <!-- Post Footer Navigation -->
+  <div class="post-footer-bar">
+    <div class="container post-footer-inner">
+      <a href="../blog.html" class="post-back-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 3L5 7.5L9.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        返回博客
+      </a>
+      <div class="post-tag-row">
+        <span class="post-tag-pill">读书笔记</span>
+        <span class="post-tag-pill">女性主义</span>
+        <span class="post-tag-pill">bell hooks</span>
+      </div>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <p>&copy; 2025 TING. All rights reserved.</p>
@@ -96,5 +236,21 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    /* ── Reading progress bar ── */
+    (function () {
+      var bar = document.getElementById('readingProgress');
+      var content = document.getElementById('postContent');
+      function tick() {
+        var rect = content.getBoundingClientRect();
+        var total = content.offsetHeight;
+        var read = -rect.top + window.innerHeight * 0.6;
+        var pct = Math.min(Math.max(read / total * 100, 0), 100);
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+  </script>
 </body>
 </html>
