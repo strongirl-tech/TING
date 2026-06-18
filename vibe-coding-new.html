@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding 与海外华人女性的数字身份重构 - TING</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Open Graph / 分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TING">
+  <meta property="og:title" content="Vibe Coding 与海外华人女性的数字身份重构 - TING">
+  <meta property="og:description" content="探索 · 记录 · 思考">
+  <meta property="og:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+  <meta property="og:url" content="https://strongirl-tech.github.io/TING/vibe-coding-new.html">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vibe Coding 与海外华人女性的数字身份重构 - TING">
+  <meta name="twitter:description" content="探索 · 记录 · 思考">
+  <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+
+  <!-- QR Code Floating Button -->
+<style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 22px;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 36px 40px 28px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-popup h3 { margin: 0 0 6px; color: #2E4A35; font-size: 18px; }
+    .qr-popup p { margin: 0 0 18px; color: #666; font-size: 13px; }
+    .qr-popup img { border: 1px solid #e0e0e0; border-radius: 8px; }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 28px 20px 20px; }
+      .qr-popup img { width: 200px !important; height: 200px !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">TING</a>
+      <div class="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="../blog.html" class="active">博客</a>
+        <a href="../growth.html">成长记录</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 230 C98 210 52 204 30 185" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 185 C162 165 208 158 228 138" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 140 C104 124 66 116 46 100" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 100 C156 86 196 78 214 62" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+
+    <div class="container post-hero-inner">
+      <nav class="post-breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">博客</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>研究笔记</span>
+      </nav>
+
+      <div class="post-meta-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <time class="post-meta-time" datetime="2026-06-01">2026年6月1日</time>
+        <span class="post-read-time">☕ 约 7 分钟阅读</span>
+      </div>
+
+      <h1 class="post-hero-title">Vibe Coding</h1>
+      <p class="post-hero-subtitle">与海外华人女性的数字身份重构</p>
+    </div>
+  </header>
+
+  <!-- Post Body Layout -->
+  <div class="post-layout container">
+
+    <!-- Table of Contents -->
+    <aside class="post-toc" id="postToc" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-label">目录</p>
+        <nav>
+          <a href="#s-intro"      class="toc-link">Vibe Coding 的兴起</a>
+          <a href="#s-post"       class="toc-link">一个论坛教学帖</a>
+          <a href="#s-create"     class="toc-link">从不会到能创造</a>
+          <a href="#s-consumer"   class="toc-link">从消费者到创造者</a>
+          <a href="#s-share"      class="toc-link">从知识独占到共享</a>
+          <a href="#s-identity"   class="toc-link">数字身份重构</a>
+          <a href="#s-closing"    class="toc-link">结语</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Article -->
+    <article class="post-article" id="postContent">
+
+      <!-- Lede -->
+      <blockquote class="lede-quote">
+        <span class="lede-mark">"</span>
+        不写代码，而是用自然语言描述需求，让 AI 生成代码，人只负责感受结果是否正确。
+        <cite>— Andrej Karpathy, 2025</cite>
+      </blockquote>
+
+      <!-- Section 1 -->
+      <section id="s-intro" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          Vibe Coding 的兴起
+        </h2>
+        <p>2025年初，Andrej Karpathy 提出了 Vibe Coding 这个概念——不写代码，而是用自然语言描述需求，让 AI 生成代码，人只负责感受结果是否正确。这个看似简单的技术变革，实际上正在深刻地改变一部分海外华人女性的职业身份与自我认知。</p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="s-post" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          从一个论坛帖子说起
+        </h2>
+        <p>在「她乡」（Women Overseas）论坛上，一位网名为 Xiyangcaimi 的用户发布了一则无偿教学帖：【无偿提供】vibe coding / llm 免费教学。她是一位 AI 方向的 PhD 毕业生，NLP/LLM 方向，想教 1-3 个女生 vibe coding。</p>
+        <div class="post-stat-badge">
+          <span class="stat-icon">🔥</span>
+          <span>帖子发布后迅速引起热烈反响：<strong>22 个赞</strong>、<strong>23 位用户</strong>参与、<strong>755 次</strong>浏览</span>
+        </div>
+        <p>评论区里，有纯文科背景的 0 基础用户询问"完全没有 CS 背景的人也能学吗？"，有正在自学 Python 的用户希望加入，还有用户感叹"CS 山区孩子求老师慈善支教"。</p>
+        <blockquote class="pull-quote">
+          "当编程的门槛被 AI 大幅降低，技术不再是 CS 专业人的专属领地，海外华人女性正在通过 vibe coding <em>重新定义自己与技术的关系</em>。"
+        </blockquote>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="s-create" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          从"不会编程"到"能用技术创造"
+        </h2>
+        <p>传统编程的学习曲线陡峭，需要掌握语法、数据结构、算法等专业知识。这种高门槛在客观上形成了一种技术壁垒，使得许多非理工科背景的女性被排除在技术创造之外。</p>
+        <p>而 vibe coding 将编程的门槛降低到了"会说话就行"的程度。在论坛中，我们看到<strong>文科背景的用户、自学 Python 遇到瓶颈的用户、甚至完全 0 基础的用户</strong>都表达了学习意愿。这表明 vibe coding 正在打破传统的技术身份边界。</p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="s-consumer" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          从技术消费者到技术创造者
+        </h2>
+        <p>Xiyangcaimi 在帖子中提到，她用 vibe coding 给自己写过 10+ 个 iOS app 小工具，帮人做过商用个人网站。这种从使用技术产品到创造技术产品的身份转变，具有深远的赋权意义。</p>
+        <p>当一位海外华人女性能够用自然语言描述需求、让 AI 生成代码、创造出属于自己的数字工具时，她不再只是技术生态中的消费者，而成为了<strong>创造者</strong>。这种身份转变带来的自我效能感提升是不可忽视的。</p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="s-share" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          从知识独占到知识共享
+        </h2>
+        <p>无偿教学的帖子本身就是一个知识共享的实践。Xiyangcaimi 不是在售卖课程，而是在建立一个互助的网络。这种模式与传统的技术知识传播形成了鲜明对比——它不是自上而下的教学，而是平等的共享。</p>
+        <p>在海外华人女性的语境中，这种知识共享行为本身就构成了一种身份实践：通过帮助他人获得技术能力，她们在集体层面重构了<strong>华人女性与技术的关系叙事</strong>。</p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="s-identity" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          数字身份重构的深层含义
+        </h2>
+        <p>Vibe coding 对海外华人女性数字身份的重构，不仅仅是"学会了写代码"这么简单。它触及了几个更深层的议题：</p>
+        <p><strong>身份边界的模糊化。</strong>当文科生和程序员的界限被 AI 消解，海外华人女性不再需要被单一的学科身份所定义。她们可以同时是文学爱好者、社会学研究者和技术创造者。</p>
+        <p><strong>跨国语境中的技术自信。</strong>在异文化环境中，技术能力往往与职业竞争力直接相关。Vibe coding 为那些没有 CS 背景的海外华人女性提供了一条获得技术能力的捷径，从而增强了她们在跨国职场中的自信心。</p>
+        <p><strong>社区层面的身份协商。</strong>论坛中的互动表明，vibe coding 不仅是个人的技术实践，更是一种社区层面的身份协商。通过无偿教学、经验分享、互相鼓励，海外华人女性正在共同建构一种新的集体身份——"懂技术的华人女性"。</p>
+      </section>
+
+      <!-- Section 7: Closing -->
+      <section id="s-closing" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          结语
+        </h2>
+        <p>Vibe coding 的出现，为海外华人女性的数字身份重构提供了一个新的切入点。它不仅降低了技术门槛，更重要的是，它改变了"谁可以做技术"的叙事。当越来越多的海外华人女性通过 AI 工具成为技术创造者，她们的身份认同图谱也在被重新绘制。</p>
+        <p class="post-closing-line">这或许只是一个开始，但这个开始本身就值得被记录和思考。</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Post Footer Navigation -->
+  <div class="post-footer-bar">
+    <div class="container post-footer-inner">
+      <a href="../blog.html" class="post-back-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 3L5 7.5L9.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        返回博客
+      </a>
+      <div class="post-tag-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <span class="post-tag-pill">Vibe Coding</span>
+        <span class="post-tag-pill">数字身份</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 TING. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/strongirl-tech/TING" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ── Reading progress bar ── */
+    (function () {
+      var bar = document.getElementById('readingProgress');
+      var content = document.getElementById('postContent');
+      function tick() {
+        var rect = content.getBoundingClientRect();
+        var total = content.offsetHeight;
+        var read = -rect.top + window.innerHeight * 0.6;
+        var pct = Math.min(Math.max(read / total * 100, 0), 100);
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+
+    /* ── TOC active state ── */
+    (function () {
+      var sections = document.querySelectorAll('.post-section');
+      var links = document.querySelectorAll('.toc-link');
+      if (!sections.length || !links.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var al = document.querySelector('.toc-link[href="#' + e.target.id + '"]');
+            if (al) al.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+
+  <!-- QR Code Floating Button -->
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <h3>扫码访问</h3>
+      <p>使用手机扫描二维码访问本页</p>
+      <img src="assets/site-qrcode.png" alt="扫码访问 TING" style="width:220px;height:220px;border:1px solid #e0e0e0;border-radius:8px;">
+    </div>
+  </div>
+    <script>
+    function toggleQR() {
+      document.getElementById('qrOverlay').classList.add('active');
+    }
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+  </script>
+</body>
+</html>
