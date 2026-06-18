@@ -23,65 +23,6 @@
   <meta name="twitter:title" content="TING — 探索 · 记录 · 思考">
   <meta name="twitter:description" content="一个关于研究、旅行与成长的思考空间。记录海外华人女性的身份协商、自我重构与跨国探索。">
   <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
-
-  <!-- QR Code Floating Button -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-  <style>
-    .qr-float-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
-      transition: transform 0.25s, box-shadow 0.25s;
-      font-size: 22px;
-    }
-    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
-    .qr-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
-    }
-    .qr-overlay.active { display: flex; }
-    .qr-popup {
-      background: #fff;
-      border-radius: 18px;
-      padding: 36px 40px 28px;
-      text-align: center;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
-      position: relative;
-      animation: qrPop 0.25s ease-out;
-    }
-    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    .qr-popup h3 { margin: 0 0 6px; color: #2E4A35; font-size: 18px; }
-    .qr-popup p { margin: 0 0 18px; color: #666; font-size: 13px; }
-    .qr-popup canvas { border: 1px solid #e0e0e0; border-radius: 8px; }
-    .qr-close {
-      position: absolute;
-      top: 10px; right: 16px;
-      background: none; border: none;
-      font-size: 22px; color: #999; cursor: pointer;
-    }
-    .qr-close:hover { color: #333; }
-    @media (max-width: 500px) {
-      .qr-popup { padding: 28px 20px 20px; }
-      .qr-popup canvas { width: 200px !important; height: 200px !important; }
-    }
-  </style>
 </head>
 
 <body>
@@ -395,137 +336,6 @@
 
   <script src="js/main.js"></script>
 
-  <!-- QR Code Floating Button -->
-  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
-  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
-    <div class="qr-popup">
-      <button class="qr-close" onclick="closeQR(event)">&times;</button>
-      <h3>扫码访问</h3>
-      <p>使用手机扫描二维码访问本页</p>
-      <canvas id="qrCanvas"></canvas>
-    </div>
-  </div>
-  <script>
-    function toggleQR() {
-      const overlay = document.getElementById('qrOverlay');
-      overlay.classList.add('active');
-      if (!overlay.dataset.rendered) {
-        QRCode.toCanvas(document.getElementById('qrCanvas'), window.location.href, {
-          width: 240, margin: 2, color: { dark: '#2E4A35', light: '#ffffff' }
-        }, function(err) { if (err) console.error(err); });
-        overlay.dataset.rendered = '1';
-      }
-    }
-    function closeQR(e) {
-      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
-        document.getElementById('qrOverlay').classList.remove('active');
-      }
-    }
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
-  </script>
-
-  <!-- QR Code Floating Button + Share Card -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-  <style>
-    .qr-float-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
-      transition: transform 0.25s, box-shadow 0.25s;
-      font-size: 20px;
-      line-height: 1;
-    }
-    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
-    .qr-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
-    }
-    .qr-overlay.active { display: flex; }
-    .qr-popup {
-      background: #fff;
-      border-radius: 18px;
-      padding: 32px 36px 28px;
-      text-align: center;
-      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
-      position: relative;
-      animation: qrPop 0.25s ease-out;
-      max-width: 340px;
-      width: 90vw;
-    }
-    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    .qr-popup h3 { margin: 0 0 4px; color: #2E4A35; font-size: 17px; font-weight: 600; }
-    .qr-popup p { margin: 0 0 16px; color: #888; font-size: 12px; }
-    .qr-popup canvas { border: 1px solid #e8e8e8; border-radius: 8px; }
-    .qr-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 18px;
-    }
-    .qr-tab {
-      flex: 1;
-      padding: 8px 0;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      border: 1.5px solid #d0d0d0;
-      background: #f8f8f8;
-      color: #666;
-    }
-    .qr-tab.active {
-      background: #2E4A35;
-      color: #fff;
-      border-color: #2E4A35;
-    }
-    .qr-tab:hover:not(.active) { background: #eee; }
-    .qr-panel { display: none; }
-    .qr-panel.active { display: block; }
-    .qr-close {
-      position: absolute;
-      top: 10px; right: 14px;
-      background: none; border: none;
-      font-size: 22px; color: #999; cursor: pointer;
-    }
-    .qr-close:hover { color: #333; }
-    .share-btn {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 10px 24px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-    .share-btn:hover { transform: scale(1.05); }
-    .share-btn:active { opacity: 0.85; }
-    .share-btn svg { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; }
-    @media (max-width: 500px) {
-      .qr-popup { padding: 24px 18px 20px; }
-    }
-  </style>
-
   <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享">&#x1F517;</button>
   <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
     <div class="qr-popup">
@@ -729,6 +539,293 @@
       setTimeout(function() {
         const canvas = document.getElementById('shareCardCanvas');
         const link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      }, 300);
+    }
+  </script>
+
+
+  <!-- QR Code Floating Button + Share Card -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 36px 28px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+      max-width: 340px;
+      width: 90vw;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-popup h3 { margin: 0 0 4px; color: #2E4A35; font-size: 17px; font-weight: 600; }
+    .qr-popup p { margin: 0 0 16px; color: #888; font-size: 12px; }
+    .qr-popup canvas { border: 1px solid #e8e8e8; border-radius: 8px; }
+    .qr-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .qr-tab {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1.5px solid #d0d0d0;
+      background: #f8f8f8;
+      color: #666;
+    }
+    .qr-tab.active {
+      background: #2E4A35;
+      color: #fff;
+      border-color: #2E4A35;
+    }
+    .qr-tab:hover:not(.active) { background: #eee; }
+    .qr-panel { display: none; }
+    .qr-panel.active { display: block; }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 14px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    .share-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 24px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .share-btn:hover { transform: scale(1.05); }
+    .share-btn:active { opacity: 0.85; }
+    .share-btn svg { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 24px 18px 20px; }
+    }
+  </style>
+
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <div class="qr-tabs">
+        <div class="qr-tab active" onclick="switchTab('scan')">扫码访问</div>
+        <div class="qr-tab" onclick="switchTab('card')">分享卡片</div>
+      </div>
+      <div class="qr-panel active" id="scanPanel">
+        <h3>扫码访问</h3>
+        <p>使用手机扫描二维码打开本页</p>
+        <canvas id="qrCanvas"></canvas>
+      </div>
+      <div class="qr-panel" id="cardPanel">
+        <h3>保存分享卡片</h3>
+        <p>生成精美卡片图片，发朋友圈更吸睛</p>
+        <canvas id="shareCardCanvas" style="border:none; border-radius:12px; max-width:100%;"></canvas>
+        <button class="share-btn" onclick="downloadShareCard()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          保存图片
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    /* Tab switching */
+    function switchTab(tab) {
+      document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.qr-panel').forEach(p => p.classList.remove('active'));
+      if (tab === 'scan') {
+        document.querySelector('.qr-tab:first-child').classList.add('active');
+        document.getElementById('scanPanel').classList.add('active');
+      } else {
+        document.querySelector('.qr-tab:last-child').classList.add('active');
+        document.getElementById('cardPanel').classList.add('active');
+        generateShareCard();
+      }
+    }
+
+    /* QR code rendering */
+    function toggleQR() {
+      var overlay = document.getElementById('qrOverlay');
+      overlay.classList.add('active');
+      if (!overlay.dataset.qrRendered) {
+        QRCode.toCanvas(document.getElementById('qrCanvas'), window.location.href, {
+          width: 220, margin: 2, color: { dark: '#2E4A35', light: '#ffffff' }
+        }, function(err) { if (err) console.error(err); });
+        overlay.dataset.qrRendered = '1';
+      }
+    }
+
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+
+    /* Share Card Generator */
+    var shareCardGenerated = false;
+    function generateShareCard() {
+      if (shareCardGenerated) return;
+      var canvas = document.getElementById('shareCardCanvas');
+      var ctx = canvas.getContext('2d');
+      var W = 680, H = 960;
+      canvas.width = W;
+      canvas.height = H;
+
+      /* Background gradient */
+      var grad = ctx.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#2A5239');
+      grad.addColorStop(0.4, '#3A6B47');
+      grad.addColorStop(1, '#4A7C5A');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      /* Subtle leaf overlay */
+      ctx.globalAlpha = 0.06;
+      for (var i = 0; i < 12; i++) {
+        ctx.beginPath();
+        ctx.ellipse(60 + i * 55, 80 + i * 75, 25 + i*2, 14 + i, -0.4, 0, Math.PI * 2);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      /* White card */
+      ctx.fillStyle = '#ffffff';
+      roundRect(ctx, 40, 160, W - 80, H - 280, 20);
+      ctx.fill();
+
+      /* TING logo */
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 48px Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('TING', W/2, 110);
+      ctx.font = '16px Georgia, serif';
+      ctx.fillStyle = '#c8dcc8';
+      ctx.fillText('Explore · Record · Think', W/2, 140);
+
+      /* Page title & description */
+      var ogTitle = document.querySelector('meta[property="og:title"]') ? document.querySelector('meta[property="og:title"]').content : document.title;
+      var ogDesc = document.querySelector('meta[property="og:description"]') ? document.querySelector('meta[property="og:description"]').content : '';
+      ctx.fillStyle = '#2E4A35';
+      ctx.font = 'bold 28px Georgia, "Noto Serif SC", serif';
+      ctx.textAlign = 'left';
+      var titleEndY = wrapText(ctx, ogTitle, 70, 220, 540, 38);
+      ctx.fillStyle = '#555';
+      ctx.font = '15px "Noto Sans SC", Arial, sans-serif';
+      wrapText(ctx, ogDesc, 70, titleEndY + 30, 540, 22);
+
+      /* Divider */
+      ctx.strokeStyle = '#e0e0e0';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(70, titleEndY + 80);
+      ctx.lineTo(610, titleEndY + 80);
+      ctx.stroke();
+
+      /* QR code */
+      var tmpCanvas = document.createElement('canvas');
+      QRCode.toCanvas(tmpCanvas, window.location.href, {
+        width: 160, margin: 1, color: { dark: '#2E4A35', light: '#ffffff' }
+      }, function(err) {
+        if (err) { console.error(err); return; }
+        ctx.drawImage(tmpCanvas, 470, H - 260);
+        ctx.fillStyle = '#888';
+        ctx.font = '13px "Noto Sans SC", Arial, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText('扫码隅读全文', 380, H - 208);
+        ctx.fillText('或复制链接分享', 380, H - 188);
+        ctx.fillStyle = '#aaa';
+        ctx.font = '12px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('strongirl-tech.github.io/TING', W/2, H - 40);
+        shareCardGenerated = true;
+      });
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      var line = '';
+      var lineY = y;
+      var maxLines = 4;
+      var count = 0;
+      for (var i = 0; i < text.length; i++) {
+        var testLine = line + text[i];
+        if (ctx.measureText(testLine).width > maxWidth && line.length > 0) {
+          ctx.fillText(line, x, lineY);
+          line = text[i];
+          lineY += lineHeight;
+          count++;
+          if (count >= maxLines) { ctx.fillText(line + '...', x, lineY); return lineY; }
+        } else { line = testLine; }
+      }
+      ctx.fillText(line, x, lineY);
+      return lineY;
+    }
+
+    function downloadShareCard() {
+      if (!shareCardGenerated) generateShareCard();
+      setTimeout(function() {
+        var canvas = document.getElementById('shareCardCanvas');
+        var link = document.createElement('a');
         link.download = 'TING-share-card.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
