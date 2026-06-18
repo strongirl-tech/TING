@@ -423,5 +423,318 @@
     }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
   </script>
+
+  <!-- QR Code Floating Button + Share Card -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 36px 28px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+      max-width: 340px;
+      width: 90vw;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-popup h3 { margin: 0 0 4px; color: #2E4A35; font-size: 17px; font-weight: 600; }
+    .qr-popup p { margin: 0 0 16px; color: #888; font-size: 12px; }
+    .qr-popup canvas { border: 1px solid #e8e8e8; border-radius: 8px; }
+    .qr-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .qr-tab {
+      flex: 1;
+      padding: 8px 0;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1.5px solid #d0d0d0;
+      background: #f8f8f8;
+      color: #666;
+    }
+    .qr-tab.active {
+      background: #2E4A35;
+      color: #fff;
+      border-color: #2E4A35;
+    }
+    .qr-tab:hover:not(.active) { background: #eee; }
+    .qr-panel { display: none; }
+    .qr-panel.active { display: block; }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 14px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    .share-btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 24px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .share-btn:hover { transform: scale(1.05); }
+    .share-btn:active { opacity: 0.85; }
+    .share-btn svg { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 24px 18px 20px; }
+    }
+  </style>
+
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <div class="qr-tabs">
+        <div class="qr-tab active" onclick="switchTab('scan')">扫码访问</div>
+        <div class="qr-tab" onclick="switchTab('card')">分享卡片</div>
+      </div>
+      <div class="qr-panel active" id="scanPanel">
+        <h3>扫码访问</h3>
+        <p>使用手机扫描二维码打开本页</p>
+        <canvas id="qrCanvas"></canvas>
+      </div>
+      <div class="qr-panel" id="cardPanel">
+        <h3>保存分享卡片</h3>
+        <p>生成精美卡片图片，发朋友圈更吸睛</p>
+        <canvas id="shareCardCanvas" style="border:none; border-radius:12px; max-width:100%;"></canvas>
+        <button class="share-btn" onclick="downloadShareCard()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          保存图片
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    /* Tab switching */
+    function switchTab(tab) {
+      document.querySelectorAll('.qr-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.qr-panel').forEach(p => p.classList.remove('active'));
+      if (tab === 'scan') {
+        document.querySelector('.qr-tab:first-child').classList.add('active');
+        document.getElementById('scanPanel').classList.add('active');
+      } else {
+        document.querySelector('.qr-tab:last-child').classList.add('active');
+        document.getElementById('cardPanel').classList.add('active');
+        generateShareCard();
+      }
+    }
+
+    /* QR code rendering */
+    function toggleQR() {
+      const overlay = document.getElementById('qrOverlay');
+      overlay.classList.add('active');
+      if (!overlay.dataset.qrRendered) {
+        QRCode.toCanvas(document.getElementById('qrCanvas'), window.location.href, {
+          width: 220, margin: 2, color: { dark: '#2E4A35', light: '#ffffff' }
+        }, function(err) { if (err) console.error(err); });
+        overlay.dataset.qrRendered = '1';
+      }
+    }
+
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+
+    /* Share Card Generator */
+    let shareCardGenerated = false;
+    function generateShareCard() {
+      if (shareCardGenerated) return;
+      const canvas = document.getElementById('shareCardCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = 680, H = 960;
+      canvas.width = W;
+      canvas.height = H;
+
+      // Background gradient
+      const grad = ctx.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#2A5239');
+      grad.addColorStop(0.4, '#3A6B47');
+      grad.addColorStop(1, '#4A7C5A');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Subtle leaf pattern overlay
+      ctx.globalAlpha = 0.06;
+      for (let i = 0; i < 12; i++) {
+        ctx.beginPath();
+        const lx = 60 + i * 55;
+        const ly = 80 + i * 75;
+        ctx.ellipse(lx, ly, 25 + i*2, 14 + i, -0.4, 0, Math.PI * 2);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      // White card area
+      ctx.fillStyle = '#ffffff';
+      const cardX = 40, cardY = 160, cardW = W - 80, cardH = H - 280;
+      roundRect(ctx, cardX, cardY, cardW, cardH, 20);
+      ctx.fill();
+
+      // TING logo at top
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 48px Georgia, "Times New Roman", serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('TING', W/2, 110);
+
+      // Subtitle
+      ctx.font = '16px Georgia, serif';
+      ctx.fillStyle = '#c8dcc8';
+      ctx.fillText('Explore · Record · Think', W/2, 140);
+
+      // Get page title and description from OG tags
+      const ogTitle = document.querySelector('meta[property="og:title"]')?.content || document.title || 'TING';
+      const ogDesc = document.querySelector('meta[property="og:description"]')?.content || '探索 · 记录 · 思考';
+
+      // Title inside white card
+      ctx.fillStyle = '#2E4A35';
+      ctx.font = 'bold 28px Georgia, "Noto Serif SC", serif';
+      ctx.textAlign = 'left';
+      const titleY = cardY + 60;
+      wrapText(ctx, ogTitle, cardX + 30, titleY, cardW - 60, 38);
+
+      // Description
+      ctx.fillStyle = '#555';
+      ctx.font = '15px "Noto Sans SC", Arial, sans-serif';
+      const descY = titleY + 50 + (ogTitle.length > 20 ? 38 : 0);
+      wrapText(ctx, ogDesc, cardX + 30, descY, cardW - 60, 22);
+
+      // Divider line
+      ctx.strokeStyle = '#e0e0e0';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(cardX + 30, descY + 60);
+      ctx.lineTo(cardX + cardW - 30, descY + 60);
+      ctx.stroke();
+
+      // QR code area (bottom right of card)
+      const qrSize = 160;
+      const qrX = cardX + cardW - qrSize - 30;
+      const qrY = cardY + cardH - qrSize - 30;
+
+      // Generate QR onto a temporary canvas
+      const tmpCanvas = document.createElement('canvas');
+      QRCode.toCanvas(tmpCanvas, window.location.href, {
+        width: qrSize, margin: 1, color: { dark: '#2E4A35', light: '#ffffff' }
+      }, function(err) {
+        if (err) { console.error(err); return; }
+        ctx.drawImage(tmpCanvas, qrX, qrY);
+
+        // "扫码阅读" text next to QR
+        ctx.fillStyle = '#888';
+        ctx.font = '13px "Noto Sans SC", Arial, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText('扫码阅读全文', qrX - 90, qrY + qrSize/2 - 8);
+        ctx.fillText('或复制链接分享', qrX - 90, qrY + qrSize/2 + 12);
+
+        // URL at bottom
+        ctx.fillStyle = '#aaa';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('strongirl-tech.github.io/TING', W/2, H - 40);
+
+        shareCardGenerated = true;
+      });
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      let line = '';
+      let lineY = y;
+      let maxLines = 4;
+      let count = 0;
+      for (let i = 0; i < text.length; i++) {
+        const testLine = line + text[i];
+        if (ctx.measureText(testLine).width > maxWidth && line.length > 0) {
+          ctx.fillText(line, x, lineY);
+          line = text[i];
+          lineY += lineHeight;
+          count++;
+          if (count >= maxLines) {
+            ctx.fillText(line + '...', x, lineY);
+            return lineY;
+          }
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, lineY);
+      return lineY;
+    }
+
+    function downloadShareCard() {
+      if (!shareCardGenerated) { generateShareCard(); }
+      setTimeout(function() {
+        const canvas = document.getElementById('shareCardCanvas');
+        const link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      }, 300);
+    }
+  </script>
+
 </body>
 </html>
