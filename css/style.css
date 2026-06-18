@@ -1665,3 +1665,209 @@ img {
   .post-footer-inner { flex-direction: column; align-items: flex-start; }
   .post-hero-title { font-size: 1.65rem; }
 }
+
+
+/* ============================================================
+   FIELD NOTES LAYOUT — digital-ethnography.html
+   Unique layout: centered single column, observation cards,
+   methodology panel, conclusion tags.
+   Shares the same botanical palette and typography.
+   ============================================================ */
+
+/* ── Centered post layout (no sidebar) ── */
+.post-layout-center {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+/* ── Field note divider ── */
+.fieldnote-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 1.8rem;
+}
+.fieldnote-divider::before,
+.fieldnote-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(74, 124, 90, 0.3),
+    transparent);
+}
+.fieldnote-divider-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #4A7C5A;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Observation card ── */
+.fieldnote-card {
+  position: relative;
+  background: rgba(238, 245, 239, 0.45);
+  border: 1px solid rgba(74, 124, 90, 0.15);
+  border-left: 3px solid #4A7C5A;
+  border-radius: 0 14px 14px 0;
+  padding: 1.6rem 1.8rem 1.8rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+.fieldnote-card:hover {
+  box-shadow: 0 4px 24px rgba(42, 82, 57, 0.08);
+  transform: translateX(2px);
+  border-left-color: #2A5239;
+}
+
+.fieldnote-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+.fieldnote-number {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #4A7C5A;
+  font-weight: 600;
+}
+.fieldnote-card-tag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  padding: 0.15em 0.7em;
+  background: rgba(74, 124, 90, 0.1);
+  color: #4A7C5A;
+  border: 1px solid rgba(74, 124, 90, 0.2);
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.fieldnote-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c1a1a;
+  margin: 0 0 0.8rem;
+}
+.fieldnote-card p {
+  margin-bottom: 1rem;
+}
+.fieldnote-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Methodology panel ── */
+.method-panel {
+  background: linear-gradient(160deg,
+    rgba(238, 245, 239, 0.5) 0%,
+    rgba(247, 243, 240, 0.4) 100%);
+  border: 1px solid rgba(74, 124, 90, 0.14);
+  border-radius: 14px;
+  padding: 1.8rem 1.8rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.method-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed rgba(74, 124, 90, 0.12);
+}
+.method-item:first-child {
+  padding-top: 0;
+}
+.method-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.method-icon-wrap {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(74, 124, 90, 0.08);
+  border-radius: 10px;
+  margin-top: 2px;
+}
+.method-text h4 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2c1a1a;
+  margin: 0 0 0.35rem;
+}
+.method-text p {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  line-height: 1.72;
+  color: #4a3a3a;
+  margin: 0;
+}
+.method-text strong {
+  color: #2c1a1a;
+  font-weight: 600;
+}
+
+/* ── Conclusion tags ── */
+.conclusion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.2rem 0 1.5rem;
+}
+.conclusion-tag {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(42, 82, 57, 0.06);
+  color: #2A5239;
+  border: 1px solid rgba(42, 82, 57, 0.18);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.conclusion-tag:hover {
+  background: rgba(42, 82, 57, 0.12);
+}
+
+/* ── Conclusion section accent ── */
+.post-section-conclusion {
+  background: linear-gradient(to bottom,
+    rgba(238, 245, 239, 0.35),
+    transparent);
+  border-radius: 14px;
+  padding: 1.8rem 1.8rem 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .post-layout-center {
+    padding: 2.5rem 1rem 4rem;
+  }
+  .fieldnote-card {
+    padding: 1.2rem 1.3rem 1.4rem;
+  }
+  .method-panel {
+    padding: 1.3rem 1.2rem 1rem;
+  }
+  .method-item {
+    gap: 0.7rem;
+  }
+  .method-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+  .post-section-conclusion {
+    padding: 1.3rem 1.3rem 1rem;
+  }
+}
