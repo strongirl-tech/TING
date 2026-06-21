@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>身体作为锚点：海外华人女性的自我关怀与身体政治 - TING</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Open Graph / 分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TING">
+  <meta property="og:title" content="身体作为锚点：海外华人女性的自我关怀与身体政治 - TING">
+  <meta property="og:description" content="探索 · 记录 · 思考">
+  <meta property="og:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+  <meta property="og:url" content="https://strongirl-tech.github.io/TING/posts/body-as-anchor.html">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="身体作为锚点：海外华人女性的自我关怀与身体政治 - TING">
+  <meta name="twitter:description" content="探索 · 记录 · 思考">
+  <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+
+<style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 22px;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 32px 24px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+      max-width: 380px;
+      width: 90vw;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    .qr-tabs {
+      display: flex;
+      border-bottom: 2px solid #e8e8e8;
+      margin-bottom: 20px;
+      gap: 0;
+    }
+    .qr-tab-btn {
+      flex: 1;
+      padding: 10px 0 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      color: #999;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .qr-tab-btn.active { color: #2E4A35; }
+    .qr-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: #3A6B47;
+      border-radius: 2px;
+    }
+    .qr-tab-content { display: none; }
+    .qr-tab-content.active { display: block; }
+    .qr-tab-content img.qr-static-img {
+      width: 220px; height: 220px;
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .qr-tab-content p { margin: 0 0 12px; color: #666; font-size: 13px; }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #3A6B47, #5A8C6A);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .share-btn:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(58,107,71,0.3); }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 28px 16px 16px; }
+      .qr-tab-content img.qr-static-img { width: 180px !important; height: 180px !important; }
+    }
+</style></head>
+
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">TING</a>
+      <div class="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="../blog.html" class="active">博客</a>
+        <a href="../growth.html">成长记录</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <!-- Decorative large leaf -->
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 230 C98 210 52 204 30 185" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 185 C162 165 208 158 228 138" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 140 C104 124 66 116 46 100" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 100 C156 86 196 78 214 62" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+
+    <div class="container post-hero-inner">
+      <!-- Breadcrumb -->
+      <nav class="post-breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">博客</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>研究笔记</span>
+      </nav>
+
+      <!-- Meta row -->
+      <div class="post-meta-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <time class="post-meta-time" datetime="2026-06-21">2026年6月21日</time>
+        <span class="post-read-time">☕ 约 6 分钟阅读</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="post-hero-title">身体作为锚点</h1>
+      <p class="post-hero-subtitle">海外华人女性的自我关怀与身体政治</p>
+    </div>
+  </header>
+
+  <!-- Post Body Layout -->
+  <div class="post-layout container">
+
+    <!-- Table of Contents -->
+    <aside class="post-toc" id="postToc" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-label">目录</p>
+        <nav>
+          <a href="#s-body" class="toc-link">被忽视的身体</a>
+          <a href="#s-care" class="toc-link">自我关怀的转向</a>
+          <a href="#s-food" class="toc-link">食物与归属</a>
+          <a href="#s-politics" class="toc-link">身体即政治</a>
+          <a href="#s-closing" class="toc-link">结语</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Article -->
+    <article class="post-article" id="postContent">
+
+      <!-- Opening pull quote / lede -->
+      <blockquote class="lede-quote">
+        <span class="lede-mark">"</span>
+        比延长寿命更重要的，是健康寿命——在未来几十年里，依然拥有能够行动、能够恢复、能够照顾自己的身体。
+        <cite>— FromWomen 播客嘉宾 Jess</cite>
+      </blockquote>
+
+      <!-- Section 1 -->
+      <section id="s-body" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          被忽视的身体
+        </h2>
+        <p>在她乡社区和更广泛的海外华人女性社群中，关于身体的讨论正在经历一场静默的革命。长期以来，我们对"身份认同"的讨论集中在语言、文化、职场这些宏大的叙事维度上，却很少停下来问一句：你的身体还好吗？</p>
+        <p>最近一期关注女性生活的播客节目邀请了一位在英国NHS工作的物理治疗师Jess，她谈到了一个令无数海外女性共鸣的话题——<strong>我们太习惯忽略疲惫、忽略恢复、忽略那些身体早就已经告诉我们的事情</strong>。月经周期带来的能量波动、皮质醇的紊乱、肌肉量在30岁之后的悄然流失……这些被东亚教育传统长期遮蔽的身体知识，正在通过女性社群的分享被重新看见。</p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="s-care" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          自我关怀的转向
+        </h2>
+        <p>在跨文化适应的压力下，海外华人女性往往将身体视为实现目标的工具——熬夜赶论文、加班完成项目、牺牲睡眠来兼顾家庭与事业。这种"工具化身体观"在东亚文化中根深蒂固，却在异国的土壤中遭遇了新的挑战。</p>
+        <p>有趣的是，正是跨文化体验本身催生了身体意识的觉醒。当一位在英国生活的女性开始学习力量训练，当一位在北美职场打拼的华人女性开始关注围绝经期的骨骼健康，当她们在社区中分享蛋白质摄入、间歇性断食对女性的不同影响——这些看似琐碎的身体知识，实际上构成了另一种形式的<strong>跨文化适应</strong>：不是向外融入新社会，而是向内重新认识自己。</p>
+        <div class="post-stat-badge">
+          <span class="stat-icon">📊</span>
+          <span>研究表明，<strong>医学研究中长期存在性别偏差</strong>，女性的身体体验在临床数据中系统性缺席，这一现象被称为"看不见的女性"</span>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="s-food" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          食物与归属
+        </h2>
+        <p>身体与身份的交汇点，最日常也最深刻的莫过于食物。在女性社群的讨论中，食物从来不只是营养摄入——它承载着记忆、连接和某种"我是从哪里来"的确认。</p>
+        <blockquote class="pull-quote">
+          "越是在海外生活，越会意识到中国人的一顿饭、一只粽子、一块月饼，承载的不只是味道，还有记忆、连接和某种'我是从哪里来'的确认。"
+          <cite>— FromWomen 播客</cite>
+        </blockquote>
+        <p>然而，食物同时也是性别政治的微观战场。围绕美食的矛盾心态——体重焦虑、卡路里阴影、做饭被默认成"女性该做的事"——即使在海外，传统性别期待依然如影随形。一位女性在播客中坦言：<strong>即使选择不做饭，也仍然会被传统性别角色期待审视</strong>。</p>
+        <p>这种张力恰恰揭示了海外华人女性身体经验的复杂性：她们既在新的文化语境中获得了重新定义身体的自由，又无法完全挣脱旧有文化脚本对身体行为的规训。</p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="s-politics" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          身体即政治
+        </h2>
+        <p>当我们将视野从个体经验拉回结构性分析，身体政治的轮廓逐渐清晰。2026年发表在<em>Studies in Higher Education</em>上的一项研究指出，在西方精英学术机构中，亚洲女性学生移民虽然表面成功，但<strong>跨国旅程中的身体移动与社会流动产生了复杂的"分裂惯习"（habitus clivé）和隐性伤害</strong>。</p>
+        <p>身体不是中性的容器，而是文化权力铭刻的表面。海外华人女性的身体同时承载着种族凝视、性别规训和阶层期望——三重压力的交汇点。从竹天花板研究中亚裔女性在职场中被"安静""勤奋"等刻板印象框定的困境，到医学研究中女性身体数据的系统性缺席，身体始终是权力运作的场域。</p>
+        <p>但与此同时，身体也是抵抗的起点。当她乡社区的女性开始公开讨论月经、生育、力量训练、围绝经期，当她们拒绝将身体视为工具而是将其视为需要被倾听的伙伴，一种新的身体政治正在萌芽。</p>
+      </section>
+
+      <!-- Section 5: Closing -->
+      <section id="s-closing" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          研究者的手记
+        </h2>
+        <p>写这篇笔记的时候，我反复想起Jess在播客中说的那句话："身体并不是需要被'控制'的对象，而更像一个不断发出反馈的系统。"这句话不仅是物理治疗的核心理念，也意外地精准描述了海外华人女性身份认同研究的某种方法论转向——从"控制"身体到"倾听"身体，从宏大的文化叙事回到微观的身体经验。</p>
+        <p>或许，当我们学会理解自己的身体，知道什么时候该用力、什么时候该停下来的时候，我们也正在学会理解自己在世界中的位置。</p>
+        <p class="post-closing-line">愿我们都能学会倾听身体的低语，在异乡的土壤中扎根、生长。</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Post Footer Navigation -->
+  <div class="post-footer-bar">
+    <div class="container post-footer-inner">
+      <a href="../blog.html" class="post-back-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 3L5 7.5L9.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        返回博客
+      </a>
+      <div class="post-tag-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <span class="post-tag-pill">身体政治</span>
+        <span class="post-tag-pill">自我关怀</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 TING. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/strongirl-tech/TING" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* -- Reading progress bar -- */
+    (function () {
+      var bar = document.getElementById('readingProgress');
+      var content = document.getElementById('postContent');
+      function tick() {
+        var rect = content.getBoundingClientRect();
+        var total = content.offsetHeight;
+        var read = -rect.top + window.innerHeight * 0.6;
+        var pct = Math.min(Math.max(read / total * 100, 0), 100);
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+
+    /* -- TOC active state -- */
+    (function () {
+      var sections = document.querySelectorAll('.post-section');
+      var links = document.querySelectorAll('.toc-link');
+      if (!sections.length || !links.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var al = document.querySelector('.toc-link[href="#' + e.target.id + '"]');
+            if (al) al.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <div class="qr-tabs">
+        <button class="qr-tab-btn active" onclick="switchTab('scan')">扫码访问</button>
+        <button class="qr-tab-btn" onclick="switchTab('share')">分享卡片</button>
+      </div>
+      <div class="qr-tab-content active" id="qrScanTab">
+        <img src="../assets/site-qrcode.png" alt="扫码访问 TING" class="qr-static-img">
+        <p>扫描二维码访问本站</p>
+      </div>
+      <div class="qr-tab-content" id="qrShareTab">
+        <img src="../assets/site-qrcode.png" alt="二维码" class="qr-static-img" style="width:140px;height:140px;">
+        <canvas id="shareCardCanvas" width="680" height="960" style="display:none;"></canvas>
+        <p>生成精美分享卡片，保存图片后发朋友圈</p>
+        <button class="share-btn" onclick="generateAndSave()">保存分享卡片</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleQR() {
+      document.getElementById('qrOverlay').classList.add('active');
+    }
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+    function switchTab(tab) {
+      var btns = document.querySelectorAll('.qr-tab-btn');
+      var tabs = document.querySelectorAll('.qr-tab-content');
+      btns.forEach(function(b, i) {
+        b.classList.toggle('active', i === (tab === 'scan' ? 0 : 1));
+      });
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      document.getElementById(tab === 'scan' ? 'qrScanTab' : 'qrShareTab').classList.add('active');
+    }
+    function generateAndSave() {
+      var canvas = document.getElementById('shareCardCanvas');
+      var ctx = canvas.getContext('2d');
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      var pageTitle = ogTitle ? ogTitle.getAttribute('content') : document.title;
+      var pageDesc = ogDesc ? ogDesc.getAttribute('content') : '探索 · 记录 · 思考';
+      var grad = ctx.createLinearGradient(0, 0, 0, 960);
+      grad.addColorStop(0, '#2A5239');
+      grad.addColorStop(1, '#4A7C5A');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 680, 960);
+      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = 2;
+      for (var i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.arc(340, 480, 120 + i * 40, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 64px Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('TING', 340, 120);
+      ctx.fillStyle = '#ffffff';
+      roundRect(ctx, 40, 160, 600, 680, 16);
+      ctx.fill();
+      ctx.fillStyle = '#2E4A35';
+      ctx.font = 'bold 26px "Noto Serif SC", Georgia, serif';
+      ctx.textAlign = 'center';
+      wrapText(ctx, pageTitle, 340, 210, 520, 32);
+      ctx.fillStyle = '#666666';
+      ctx.font = '16px "Noto Sans SC", Arial, sans-serif';
+      wrapText(ctx, pageDesc, 340, 300, 520, 22);
+      var qrImg = new Image();
+      qrImg.crossOrigin = 'anonymous';
+      var qrSrc = document.querySelector('.qr-static-img').src;
+      qrImg.onload = function() {
+        ctx.drawImage(qrImg, 240, 520, 200, 200);
+        ctx.fillStyle = '#999999';
+        ctx.font = '14px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('扫码阅读全文', 340, 740);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.onerror = function() {
+        ctx.fillStyle = '#2E4A35';
+        ctx.font = '16px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(window.location.href, 340, 600);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.src = qrSrc;
+    }
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      var chars = text.split('');
+      var line = '';
+      var lines = [];
+      for (var i = 0; i < chars.length; i++) {
+        var testLine = line + chars[i];
+        var metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && line.length > 0) {
+          lines.push(line);
+          line = chars[i];
+        } else {
+          line = testLine;
+        }
+      }
+      lines.push(line);
+      for (var j = 0; j < lines.length; j++) {
+        ctx.fillText(lines[j], x, y + j * lineHeight);
+      }
+      return lines.length;
+    }
+  </script></body>
+</html>
