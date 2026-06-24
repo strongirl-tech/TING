@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>食物、迁徙与自我重塑：海外华人女性的跨文化适应日常 - TING</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Open Graph / 分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TING">
+  <meta property="og:title" content="食物、迁徙与自我重塑：海外华人女性的跨文化适应日常 - TING">
+  <meta property="og:description" content="探索 · 记录 · 思考">
+  <meta property="og:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+  <meta property="og:url" content="https://strongirl-tech.github.io/TING/posts/food-and-migration.html">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="食物、迁徙与自我重塑：海外华人女性的跨文化适应日常 - TING">
+  <meta name="twitter:description" content="探索 · 记录 · 思考">
+  <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+
+<style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 22px;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 32px 24px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+      max-width: 380px;
+      width: 90vw;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    .qr-tabs {
+      display: flex;
+      border-bottom: 2px solid #e8e8e8;
+      margin-bottom: 20px;
+      gap: 0;
+    }
+    .qr-tab-btn {
+      flex: 1;
+      padding: 10px 0 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      color: #999;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .qr-tab-btn.active { color: #2E4A35; }
+    .qr-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: #3A6B47;
+      border-radius: 2px;
+    }
+    .qr-tab-content { display: none; }
+    .qr-tab-content.active { display: block; }
+    .qr-tab-content img.qr-static-img {
+      width: 220px; height: 220px;
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .qr-tab-content p { margin: 0 0 12px; color: #666; font-size: 13px; }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #3A6B47, #5A8C6A);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .share-btn:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(58,107,71,0.3); }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 28px 16px 16px; }
+      .qr-tab-content img.qr-static-img { width: 180px !important; height: 180px !important; }
+    }
+</style></head>
+
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">TING</a>
+      <div class="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="../blog.html" class="active">博客</a>
+        <a href="../growth.html">成长记录</a>
+        <a href="../about.html">关于</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <!-- Decorative large leaf -->
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 230 C98 210 52 204 30 185" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 185 C162 165 208 158 228 138" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 140 C104 124 66 116 46 100" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 100 C156 86 196 78 214 62" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+
+    <div class="container post-hero-inner">
+      <!-- Breadcrumb -->
+      <nav class="post-breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">博客</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>研究笔记</span>
+      </nav>
+
+      <!-- Meta row -->
+      <div class="post-meta-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <time class="post-meta-time" datetime="2026-06-24">2026年6月24日</time>
+        <span class="post-read-time">☕ 约 6 分钟阅读</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="post-hero-title">食物、迁徙与自我重塑</h1>
+      <p class="post-hero-subtitle">海外华人女性的跨文化适应日常</p>
+    </div>
+  </header>
+
+  <!-- Post Body Layout -->
+  <div class="post-layout container">
+
+    <!-- Table of Contents -->
+    <aside class="post-toc" id="postToc" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-label">目录</p>
+        <nav>
+          <a href="#s-food" class="toc-link">食物作为身份媒介</a>
+          <a href="#s-shepower" class="toc-link">"她力量"的崛起</a>
+          <a href="#s-between" class="toc-link">在"缓慢窒息"与"换个地方呼吸"之间</a>
+          <a href="#s-community" class="toc-link">数字社区的情感基础设施</a>
+          <a href="#s-closing" class="toc-link">结语</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Article -->
+    <article class="post-article" id="postContent">
+
+      <!-- Opening pull quote / lede -->
+      <blockquote class="lede-quote">
+        <span class="lede-mark">"</span>
+        我的根不在护照或血统里，而在我真正生活过的日子中。
+        <cite>— 一位海外华人女性的身份独白</cite>
+      </blockquote>
+
+      <!-- Section 1 -->
+      <section id="s-food" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          食物作为身份媒介
+        </h2>
+        <p>最近的一项跨文化研究发现，食物在华人留学生的适应过程中扮演着双重角色：与同胞共享中餐强化了集体主义归属感与国家认同，而主动接触多元饮食文化则激发了自我反思与身份探索，呈现出向世界主义转变的趋势[1]。这种"餐桌上的集体主义与自我中的个人主义"的张力，恰恰映射了海外华人女性在跨文化语境中身份协商的核心困境。</p>
+        <p>在她乡论坛的日常讨论中，食物话题频繁出现——从"异国他乡最想念的那道菜"到"学会用当地食材复刻家乡味道"，这些看似琐碎的分享背后，是一场关于"我是谁"的持续对话。食物不只是果腹之物，它是记忆的载体、文化的锚点，也是自我重塑的起点。</p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="s-shepower" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          "她力量"的崛起
+        </h2>
+        <p>学者邢菁华的研究指出，海外华人女性曾受困于三重壁垒——身份与角色的隐性壁垒、文化与制度的外部壁垒、资源与机会的发展壁垒[2]。而今天，她们正从家庭与社区中的"隐性"角色，逐步走向社会公共领域的"显性"参与者，活跃于科技、商业、政治、文化等各行各业。</p>
+        <p>这种转变并非一蹴而就。它伴随着全球化、教育普及与性别主张的复杂进程。值得关注的是，女性在中国对外劳务输出中的占比已从十年前的不足20%上升至35%以上[3]。越来越多女性走向海外，不是因为"勇敢"，而是因为在"缓慢窒息"与"换个地方呼吸"之间，被现实推向了后者。</p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="s-between" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          在"缓慢窒息"与"换个地方呼吸"之间
+        </h2>
+        <p>一位建筑国企驻非女生的自述引发广泛共鸣：对很多女生来说，走向海外并不是在"国内发展"和"海外冒险"之间做选择，而是在"缓慢窒息"和"换个地方呼吸"之间，被现实推向了后者[3]。这种叙事打破了"出国即优越"的浪漫想象，呈现出更为真实的驱动力——不是对异域的向往，而是对窒息感的逃离。</p>
+        <blockquote class="pull-quote">
+          "还没到30岁，我的职场天花板已经触手可及。很多人以为，天花板是到不了的高处。但对不少女生来说，它是一种<em>看得见却无法突破</em>的日常。"
+          <cite>— 驻非女生自述</cite>
+        </blockquote>
+        <p>这种"看得见的天花板"体验，与竹天花板研究中的发现高度吻合：亚裔女性是进入专业岗位可能性最高的族裔群体，却也是最不可能晋升至管理层的人群。性别与种族的双重刻板印象，构成了阻碍她们向上流动的隐形屏障。</p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="s-community" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          数字社区的情感基础设施
+        </h2>
+        <p>在她乡论坛中，讨论的议题横跨职场、AI、创业、个人IP等多个维度，回应了当下海外华人女性在多元环境中的真实处境：在快速变化的社会与跨文化语境中，女性如何建立稳定的内在支点，并实现长期发展。论坛的存在本身，就是一种情感基础设施——它为那些在异乡感到孤独、困惑的女性提供了被认真倾听的空间。</p>
+        <p>从她乡播客中心理咨询师分享的"从中专到法国心理咨询师"的二十年旅程，到Coffee Chat系列中关于转码文科生留美小众职业的探索，这些叙事共同构成了一幅海外华人女性自我重塑的丰富图景。她们不再是传统移民叙事中的被动跟随者，而是主动书写自身命运的主体。</p>
+      </section>
+
+      <!-- Section 5: Closing -->
+      <section id="s-closing" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          研究者的手记
+        </h2>
+        <p>今天的田野笔记记录了一个微小的观察：海外华人女性的跨文化适应，往往从最日常的事物开始——一道菜、一种语言、一次对话。正是在这些看似平凡的日常实践中，身份认同被不断协商、解构与重构。学术研究告诉我们，健康的身份认同不是非此即彼的选择，而是在两种文化间找到平衡[4]。</p>
+        <p>作为研究者，我越来越相信：理解海外华人女性的身份经验，需要的不是宏大的理论框架，而是对日常细节的耐心凝视。每一道在异国厨房里复刻的家乡菜，每一次在两种语言间的切换，都是一份关于"我是谁"的微型宣言。</p>
+        <p class="post-closing-line">愿每一次迁徙，都不只是地理的移动，而是自我的展开。</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Post Footer Navigation -->
+  <div class="post-footer-bar">
+    <div class="container post-footer-inner">
+      <a href="../blog.html" class="post-back-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 3L5 7.5L9.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        返回博客
+      </a>
+      <div class="post-tag-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <span class="post-tag-pill">跨文化适应</span>
+        <span class="post-tag-pill">华人女性</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 TING. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/strongirl-tech/TING" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ── Reading progress bar ── */
+    (function () {
+      var bar = document.getElementById('readingProgress');
+      var content = document.getElementById('postContent');
+      function tick() {
+        var rect = content.getBoundingClientRect();
+        var total = content.offsetHeight;
+        var read = -rect.top + window.innerHeight * 0.6;
+        var pct = Math.min(Math.max(read / total * 100, 0), 100);
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+
+    /* ── TOC active state ── */
+    (function () {
+      var sections = document.querySelectorAll('.post-section');
+      var links = document.querySelectorAll('.toc-link');
+      if (!sections.length || !links.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var al = document.querySelector('.toc-link[href="#' + e.target.id + '"]');
+            if (al) al.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+
+  <!-- QR Code Floating Button + Share Card -->
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <div class="qr-tabs">
+        <button class="qr-tab-btn active" onclick="switchTab('scan')">扫码访问</button>
+        <button class="qr-tab-btn" onclick="switchTab('share')">分享卡片</button>
+      </div>
+      <div class="qr-tab-content active" id="qrScanTab">
+        <img src="../assets/site-qrcode.png" alt="扫码访问 TING" class="qr-static-img">
+        <p>扫描二维码访问本站</p>
+      </div>
+      <div class="qr-tab-content" id="qrShareTab">
+        <img src="../assets/site-qrcode.png" alt="二维码" class="qr-static-img" style="width:140px;height:140px;">
+        <canvas id="shareCardCanvas" width="680" height="960" style="display:none;"></canvas>
+        <p>生成精美分享卡片，保存图片后发朋友圈</p>
+        <button class="share-btn" onclick="generateAndSave()">保存分享卡片</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleQR() {
+      document.getElementById('qrOverlay').classList.add('active');
+    }
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+    function switchTab(tab) {
+      var btns = document.querySelectorAll('.qr-tab-btn');
+      var tabs = document.querySelectorAll('.qr-tab-content');
+      btns.forEach(function(b, i) {
+        b.classList.toggle('active', i === (tab === 'scan' ? 0 : 1));
+      });
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      document.getElementById(tab === 'scan' ? 'qrScanTab' : 'qrShareTab').classList.add('active');
+    }
+    function generateAndSave() {
+      var canvas = document.getElementById('shareCardCanvas');
+      var ctx = canvas.getContext('2d');
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      var pageTitle = ogTitle ? ogTitle.getAttribute('content') : document.title;
+      var pageDesc = ogDesc ? ogDesc.getAttribute('content') : '探索 · 记录 · 思考';
+      var grad = ctx.createLinearGradient(0, 0, 0, 960);
+      grad.addColorStop(0, '#2A5239');
+      grad.addColorStop(1, '#4A7C5A');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 680, 960);
+      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = 2;
+      for (var i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.arc(340, 480, 120 + i * 40, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 64px Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('TING', 340, 120);
+      ctx.fillStyle = '#ffffff';
+      roundRect(ctx, 40, 160, 600, 680, 16);
+      ctx.fill();
+      ctx.fillStyle = '#2E4A35';
+      ctx.font = 'bold 26px "Noto Serif SC", Georgia, serif';
+      ctx.textAlign = 'center';
+      wrapText(ctx, pageTitle, 340, 210, 520, 32);
+      ctx.fillStyle = '#666666';
+      ctx.font = '16px "Noto Sans SC", Arial, sans-serif';
+      wrapText(ctx, pageDesc, 340, 300, 520, 22);
+      var qrImg = new Image();
+      qrImg.crossOrigin = 'anonymous';
+      var qrSrc = document.querySelector('.qr-static-img').src;
+      qrImg.onload = function() {
+        ctx.drawImage(qrImg, 240, 520, 200, 200);
+        ctx.fillStyle = '#999999';
+        ctx.font = '14px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('扫码阅读全文', 340, 740);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.onerror = function() {
+        ctx.fillStyle = '#2E4A35';
+        ctx.font = '16px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(window.location.href, 340, 600);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.src = qrSrc;
+    }
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      var chars = text.split('');
+      var line = '';
+      var lines = [];
+      for (var i = 0; i < chars.length; i++) {
+        var testLine = line + chars[i];
+        var metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && line.length > 0) {
+          lines.push(line);
+          line = chars[i];
+        } else {
+          line = testLine;
+        }
+      }
+      lines.push(line);
+      for (var j = 0; j < lines.length; j++) {
+        ctx.fillText(lines[j], x, y + j * lineHeight);
+      }
+      return lines.length;
+    }
+  </script></body>
+</html>
