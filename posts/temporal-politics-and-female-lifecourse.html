@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时间的双重刻度：海外华人女性的生命节奏与文化时钟 - TING</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Open Graph / 分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TING">
+  <meta property="og:title" content="时间的双重刻度：海外华人女性的生命节奏与文化时钟 - TING">
+  <meta property="og:description" content="探索 · 记录 · 思考">
+  <meta property="og:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+  <meta property="og:url" content="https://strongirl-tech.github.io/TING/posts/temporal-politics-and-female-lifecourse.html">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="时间的双重刻度：海外华人女性的生命节奏与文化时钟 - TING">
+  <meta name="twitter:description" content="探索 · 记录 · 思考">
+  <meta name="twitter:image" content="https://strongirl-tech.github.io/TING/assets/og-cover.png">
+
+<style>
+    .qr-float-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A6B47 0%, #5A8C6A 100%);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(58,107,71,0.35);
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-size: 22px;
+    }
+    .qr-float-btn:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(58,107,71,0.5); }
+    .qr-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.active { display: flex; }
+    .qr-popup {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 32px 24px;
+      text-align: center;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+      position: relative;
+      animation: qrPop 0.25s ease-out;
+      max-width: 380px;
+      width: 90vw;
+    }
+    @keyframes qrPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .qr-close {
+      position: absolute;
+      top: 10px; right: 16px;
+      background: none; border: none;
+      font-size: 22px; color: #999; cursor: pointer;
+    }
+    .qr-close:hover { color: #333; }
+    .qr-tabs {
+      display: flex;
+      border-bottom: 2px solid #e8e8e8;
+      margin-bottom: 20px;
+      gap: 0;
+    }
+    .qr-tab-btn {
+      flex: 1;
+      padding: 10px 0 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      color: #999;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .qr-tab-btn.active { color: #2E4A35; }
+    .qr-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: #3A6B47;
+      border-radius: 2px;
+    }
+    .qr-tab-content { display: none; }
+    .qr-tab-content.active { display: block; }
+    .qr-tab-content img.qr-static-img {
+      width: 220px; height: 220px;
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .qr-tab-content p { margin: 0 0 12px; color: #666; font-size: 13px; }
+    .share-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #3A6B47, #5A8C6A);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .share-btn:hover { transform: scale(1.05); box-shadow: 0 4px 16px rgba(58,107,71,0.3); }
+    @media (max-width: 500px) {
+      .qr-popup { padding: 28px 16px 16px; }
+      .qr-tab-content img.qr-static-img { width: 180px !important; height: 180px !important; }
+    }
+</style></head>
+
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">TING</a>
+      <div class="nav-links">
+        <a href="../index.html">首页</a>
+        <a href="../blog.html" class="active">博客</a>
+        <a href="../growth.html">成长记录</a>
+        <a href="about.html">关于</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Post Hero Header -->
+  <header class="post-hero">
+    <!-- Decorative large leaf -->
+    <svg class="post-hero-deco" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M130 280 C130 280 18 218 12 128 C6 38 88 8 130 18 C172 8 254 38 248 128 C242 218 130 280 130 280Z" fill="#2A5239"/>
+      <path d="M130 280 L130 18" stroke="#7BAE8A" stroke-width="2" opacity="0.5"/>
+      <path d="M130 230 C98 210 52 204 30 185" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 185 C162 165 208 158 228 138" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 140 C104 124 66 116 46 100" stroke="#7BAE8A" stroke-width="1.5" opacity="0.4" fill="none"/>
+      <path d="M130 100 C156 86 196 78 214 62" stroke="#7BAE8A" stroke-width="1.5" opacity="0.35" fill="none"/>
+    </svg>
+
+    <div class="container post-hero-inner">
+      <!-- Breadcrumb -->
+      <nav class="post-breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">博客</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>研究笔记</span>
+      </nav>
+
+      <!-- Meta row -->
+      <div class="post-meta-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <time class="post-meta-time" datetime="2026-06-26">2026年6月26日</time>
+        <span class="post-read-time">☕ 约 5 分钟阅读</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="post-hero-title">时间的双重刻度</h1>
+      <p class="post-hero-subtitle">海外华人女性的生命节奏与文化时钟</p>
+    </div>
+  </header>
+
+  <!-- Post Body Layout -->
+  <div class="post-layout container">
+
+    <!-- Table of Contents -->
+    <aside class="post-toc" id="postToc" aria-label="文章目录">
+      <div class="toc-box">
+        <p class="toc-label">目录</p>
+        <nav>
+          <a href="#s-intro"     class="toc-link">两种时间的撕扯</a>
+          <a href="#s-clock"   class="toc-link">生物钟与文化钟</a>
+          <a href="#s-suspension"   class="toc-link">悬置的生命节奏</a>
+          <a href="#s-rewriting" class="toc-link">重写时间的脚本</a>
+          <a href="#s-closing"   class="toc-link">结语</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Article -->
+    <article class="post-article" id="postContent">
+
+      <!-- Opening pull quote / lede -->
+      <blockquote class="lede-quote">
+        <span class="lede-mark">"</span>
+        在这里，三十岁是职业生涯的起点；在家人眼里，三十岁是婚育倒计时的终点。
+        <cite>— 她乡论坛用户</cite>
+      </blockquote>
+
+      <!-- Section 1 -->
+      <section id="s-intro" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          两种时间的撕扯
+        </h2>
+        <p>在她乡论坛深夜的树洞里，一个 recurring 的主题令人心悸：我三十岁，博士还没毕业，妈妈说我再不生就晚了。对许多海外华人女性而言，时间从来不是中性的流逝，而是<strong>两套文化时钟的碰撞现场</strong>——一套来自所在国，鼓励探索、延迟承诺、重新定义成功；另一套来自原生家庭，以婚育为里程碑，以年龄为刻度尺。</p>
+        <p>这种双重时间性并非抽象感受，而是日常决策的隐形框架。每一次视频通话里的"有没有对象"，每一张同龄人晒出的满月照，都在提醒：你的身体在异国，但你的生命时间表仍被另一套坐标系衡量。</p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="s-clock" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          生物钟与文化钟
+        </h2>
+        <p>社会学家曾提出"社会时钟"的概念，指社会对不同年龄阶段的规范性期待。对海外华人女性而言，这一概念需要被复数化：她们同时面对<strong>西方的个体化时钟与东亚的家族化时钟</strong>，而两者几乎在所有的节点上都彼此错位。</p>
+        <p>研究显示，在美国土生土长的东亚裔女性平均初育年龄已推迟至34岁，而非婚生育比例仅为10%。这意味着什么？意味着当她们终于在学术或职场上站稳脚跟，生物学意义上的"最佳生育窗口"已经关上了一半。而来自家庭的期待往往更严苛——不是"准备好再生"，而是"先有了再说"。</p>
+        <div class="post-stat-badge">
+          <span class="stat-icon">📊</span>
+          <span>东亚裔女性在美国平均初育年龄为 <strong>34岁</strong>，显著高于全美平均水平，非婚生育比例仅为10%</span>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="s-suspension" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          悬置的生命节奏
+        </h2>
+        <p>在她乡论坛中，一位用户写道："我感觉自己的人生被按了暂停键。这边没有'应该'，那边全是'必须'。"这种悬浮感，正是跨国女性常见的生命体验——她们不再完全属于任何一种文化的时间脚本，却也尚未书写出自己的版本。</p>
+        <p>更深层的焦虑来自"比较坐标系"的混乱。在国内的同龄人群体中，她们是"还没安定下来"的异类；在所在国的同侪眼中，她们又常常被问及"为什么不先享受生活"。两种目光都无法真正看见她们所处的结构性位置：<strong>移民女性的时间，从来都不是单一文化可以丈量的</strong>。</p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="s-rewriting" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          重写时间的脚本
+        </h2>
+        <p>然而，正是在这种张力之中，一种新的时间伦理正在萌芽。越来越多的海外华人女性开始拒绝用单一文化的时钟来校准自己的生命节奏。她们选择读博到三十岁之后，选择冻卵作为技术中介，选择在稳定的伴侣关系之外探索多样的联结形式——这些选择本身，就是对"到什么年纪做什么事"的温柔抵抗。</p>
+        <blockquote class="pull-quote">
+          "我不再试图向妈妈解释这边的'正常'，而是开始定义自己的'正常'。"
+          <cite>— 她乡论坛用户</cite>
+        </blockquote>
+        <p>这种重写并非对传统的彻底背离，而是一种更具主体性的协商。<strong>不是拒绝所有时钟，而是学会在多重刻度之间，听见自己的心跳</strong>。</p>
+      </section>
+
+      <!-- Section 5: Closing -->
+      <section id="s-closing" class="post-section">
+        <h2 class="section-heading">
+          <svg class="s-leaf" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+            <path d="M7 15 C7 15 1 11.5 1 6.5 C1 1.5 4 0.5 7 1.5 C10 0.5 13 1.5 13 6.5 C13 11.5 7 15 7 15Z" fill="#4A7C5A" opacity="0.75"/>
+            <line x1="7" y1="15" x2="7" y2="1.5" stroke="#2A5239" stroke-width="0.9" opacity="0.5"/>
+          </svg>
+          结语
+        </h2>
+        <p>时间的双重刻度，或许永远不会完全重合。但海外华人女性正在做的，不是焦虑地等待指针对齐，而是学习在时差中生活——在生物学时间与社会期待之间，在原乡脚本与异域节奏之间，找到属于自己的生命节拍。</p>
+        <p>愿我们都能在多重时间性中，不被任何一套时钟定义，而是成为自己时间的织工。</p>
+        <p class="post-closing-line">愿每一道年轮，都按照自己的方向生长。</p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Post Footer Navigation -->
+  <div class="post-footer-bar">
+    <div class="container post-footer-inner">
+      <a href="../blog.html" class="post-back-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M9.5 3L5 7.5L9.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        返回博客
+      </a>
+      <div class="post-tag-row">
+        <span class="post-tag-pill">研究笔记</span>
+        <span class="post-tag-pill">时间政治</span>
+        <span class="post-tag-pill">华人女性</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 TING. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/strongirl-tech/TING" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    /* ── Reading progress bar ── */
+    (function () {
+      var bar = document.getElementById('readingProgress');
+      var content = document.getElementById('postContent');
+      function tick() {
+        var rect = content.getBoundingClientRect();
+        var total = content.offsetHeight;
+        var read = -rect.top + window.innerHeight * 0.6;
+        var pct = Math.min(Math.max(read / total * 100, 0), 100);
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    })();
+
+    /* ── TOC active state ── */
+    (function () {
+      var sections = document.querySelectorAll('.post-section');
+      var links = document.querySelectorAll('.toc-link');
+      if (!sections.length || !links.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            var al = document.querySelector('.toc-link[href="#' + e.target.id + '"]');
+            if (al) al.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -65% 0px' });
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+
+  <!-- QR Code Floating Button + Share Card -->
+  <button class="qr-float-btn" onclick="toggleQR()" aria-label="分享二维码">&#x1F517;</button>
+  <div class="qr-overlay" id="qrOverlay" onclick="closeQR(event)">
+    <div class="qr-popup">
+      <button class="qr-close" onclick="closeQR(event)">&times;</button>
+      <div class="qr-tabs">
+        <button class="qr-tab-btn active" onclick="switchTab('scan')">扫码访问</button>
+        <button class="qr-tab-btn" onclick="switchTab('share')">分享卡片</button>
+      </div>
+      <div class="qr-tab-content active" id="qrScanTab">
+        <img src="../assets/site-qrcode.png" alt="扫码访问 TING" class="qr-static-img">
+        <p>扫描二维码访问本站</p>
+      </div>
+      <div class="qr-tab-content" id="qrShareTab">
+        <img src="../assets/site-qrcode.png" alt="二维码" class="qr-static-img" style="width:140px;height:140px;">
+        <canvas id="shareCardCanvas" width="680" height="960" style="display:none;"></canvas>
+        <p>生成精美分享卡片，保存图片后发朋友圈</p>
+        <button class="share-btn" onclick="generateAndSave()">保存分享卡片</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleQR() {
+      document.getElementById('qrOverlay').classList.add('active');
+    }
+    function closeQR(e) {
+      if (e.target === document.getElementById('qrOverlay') || e.target.closest('.qr-close')) {
+        document.getElementById('qrOverlay').classList.remove('active');
+      }
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQR(e); });
+    function switchTab(tab) {
+      var btns = document.querySelectorAll('.qr-tab-btn');
+      var tabs = document.querySelectorAll('.qr-tab-content');
+      btns.forEach(function(b, i) {
+        b.classList.toggle('active', i === (tab === 'scan' ? 0 : 1));
+      });
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      document.getElementById(tab === 'scan' ? 'qrScanTab' : 'qrShareTab').classList.add('active');
+    }
+    function generateAndSave() {
+      var canvas = document.getElementById('shareCardCanvas');
+      var ctx = canvas.getContext('2d');
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      var pageTitle = ogTitle ? ogTitle.getAttribute('content') : document.title;
+      var pageDesc = ogDesc ? ogDesc.getAttribute('content') : '探索 · 记录 · 思考';
+      var grad = ctx.createLinearGradient(0, 0, 0, 960);
+      grad.addColorStop(0, '#2A5239');
+      grad.addColorStop(1, '#4A7C5A');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 680, 960);
+      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+      ctx.lineWidth = 2;
+      for (var i = 0; i < 6; i++) {
+        ctx.beginPath();
+        ctx.arc(340, 480, 120 + i * 40, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 64px Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('TING', 340, 120);
+      ctx.fillStyle = '#ffffff';
+      roundRect(ctx, 40, 160, 600, 680, 16);
+      ctx.fill();
+      ctx.fillStyle = '#2E4A35';
+      ctx.font = 'bold 26px "Noto Serif SC", Georgia, serif';
+      ctx.textAlign = 'center';
+      wrapText(ctx, pageTitle, 340, 210, 520, 32);
+      ctx.fillStyle = '#666666';
+      ctx.font = '16px "Noto Sans SC", Arial, sans-serif';
+      ctx.textAlign = 'center';
+      wrapText(ctx, pageDesc, 340, 300, 520, 22);
+      var qrImg = new Image();
+      qrImg.crossOrigin = 'anonymous';
+      var qrSrc = document.querySelector('.qr-static-img').src;
+      qrImg.onload = function() {
+        ctx.drawImage(qrImg, 240, 520, 200, 200);
+        ctx.fillStyle = '#999999';
+        ctx.font = '14px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('扫码阅读全文', 340, 740);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.onerror = function() {
+        ctx.fillStyle = '#2E4A35';
+        ctx.font = '16px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(window.location.href, 340, 600);
+        ctx.fillStyle = '#7BAE8A';
+        ctx.font = '12px Arial, sans-serif';
+        ctx.fillText('strongirl-tech.github.io/TING', 340, 870);
+        var link = document.createElement('a');
+        link.download = 'TING-share-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      qrImg.src = qrSrc;
+    }
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+      var chars = text.split('');
+      var line = '';
+      var lines = [];
+      for (var i = 0; i < chars.length; i++) {
+        var testLine = line + chars[i];
+        var metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && line.length > 0) {
+          lines.push(line);
+          line = chars[i];
+        } else {
+          line = testLine;
+        }
+      }
+      lines.push(line);
+      for (var j = 0; j < lines.length; j++) {
+        ctx.fillText(lines[j], x, y + j * lineHeight);
+      }
+      return lines.length;
+    }
+  </script></body>
+</html>
